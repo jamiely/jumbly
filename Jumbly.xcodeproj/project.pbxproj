@@ -24,6 +24,9 @@
 		6D631E88163340700056F10E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D631E60163340700056F10E /* Foundation.framework */; };
 		6D631E90163340700056F10E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D631E8E163340700056F10E /* InfoPlist.strings */; };
 		6D631E93163340700056F10E /* JumblyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D631E92163340700056F10E /* JumblyTests.m */; };
+		6D631E9F163340A80056F10E /* dictionary-cache.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D631E9E163340A80056F10E /* dictionary-cache.txt */; };
+		6D631EA3163340CD0056F10E /* Jumble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D631EA2163340CD0056F10E /* Jumble.m */; };
+		6D631EA6163341980056F10E /* Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D631EA5163341980056F10E /* Chain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,11 @@
 		6D631E8F163340700056F10E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6D631E91163340700056F10E /* JumblyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JumblyTests.h; sourceTree = "<group>"; };
 		6D631E92163340700056F10E /* JumblyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumblyTests.m; sourceTree = "<group>"; };
+		6D631E9E163340A80056F10E /* dictionary-cache.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "dictionary-cache.txt"; path = "../../Word-Jumble/dictionary-cache.txt"; sourceTree = "<group>"; };
+		6D631EA1163340CD0056F10E /* Jumble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Jumble.h; path = Models/Jumble.h; sourceTree = "<group>"; };
+		6D631EA2163340CD0056F10E /* Jumble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Jumble.m; path = Models/Jumble.m; sourceTree = "<group>"; };
+		6D631EA4163341980056F10E /* Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chain.h; path = Models/Chain.h; sourceTree = "<group>"; };
+		6D631EA5163341980056F10E /* Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chain.m; path = Models/Chain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,12 +127,13 @@
 		6D631E64163340700056F10E /* Jumbly */ = {
 			isa = PBXGroup;
 			children = (
+				6D631EA0163340B00056F10E /* Models */,
+				6D631E9D163340830056F10E /* Controllers */,
+				6D631E9C1633407E0056F10E /* Assets */,
 				6D631E6D163340700056F10E /* AppDelegate.h */,
 				6D631E6E163340700056F10E /* AppDelegate.m */,
 				6D631E76163340700056F10E /* MainStoryboard_iPhone.storyboard */,
 				6D631E79163340700056F10E /* MainStoryboard_iPad.storyboard */,
-				6D631E7C163340700056F10E /* ViewController.h */,
-				6D631E7D163340700056F10E /* ViewController.m */,
 				6D631E65163340700056F10E /* Supporting Files */,
 			);
 			path = Jumbly;
@@ -161,6 +170,34 @@
 				6D631E8E163340700056F10E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D631E9C1633407E0056F10E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6D631E9E163340A80056F10E /* dictionary-cache.txt */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		6D631E9D163340830056F10E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D631E7C163340700056F10E /* ViewController.h */,
+				6D631E7D163340700056F10E /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6D631EA0163340B00056F10E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6D631EA1163340CD0056F10E /* Jumble.h */,
+				6D631EA2163340CD0056F10E /* Jumble.m */,
+				6D631EA4163341980056F10E /* Chain.h */,
+				6D631EA5163341980056F10E /* Chain.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +277,7 @@
 				6D631E75163340700056F10E /* Default-568h@2x.png in Resources */,
 				6D631E78163340700056F10E /* MainStoryboard_iPhone.storyboard in Resources */,
 				6D631E7B163340700056F10E /* MainStoryboard_iPad.storyboard in Resources */,
+				6D631E9F163340A80056F10E /* dictionary-cache.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +315,8 @@
 				6D631E6B163340700056F10E /* main.m in Sources */,
 				6D631E6F163340700056F10E /* AppDelegate.m in Sources */,
 				6D631E7E163340700056F10E /* ViewController.m in Sources */,
+				6D631EA3163340CD0056F10E /* Jumble.m in Sources */,
+				6D631EA6163341980056F10E /* Chain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
