@@ -9,5 +9,6 @@ https://github.com/jamiely/Word-Jumble.
 
 # Media
 
-http://youtu.be/CrXjJ9-Z-Io
+* ddf28e9 - http://youtu.be/wOLQqsAJ3gA
+* 5ddaaf8 - http://youtu.be/CrXjJ9-Z-Io
 
