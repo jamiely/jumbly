@@ -30,6 +30,19 @@
         }
         else {
             cache = [fileData componentsSeparatedByString: @"\n"];
+            
+            NSMutableArray *wordsInDictionary = [NSMutableArray arrayWithCapacity: cache.count];
+            [cache enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                if([UIReferenceLibraryViewController dictionaryHasDefinitionForTerm: obj]) {
+                    [wordsInDictionary addObject: obj];
+                }
+            }];
+            NSData *data = [[wordsInDictionary componentsJoinedByString: @"\n"] dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+            NSString *cachesFolder = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+
+            NSString *filePath = [cachesFolder stringByAppendingPathComponent:@"dictionary-clean.txt"];
+            [data writeToFile: filePath atomically: YES];
+            NSLog(@"Filepath: %@", filePath);
         }
     }
     return self;
