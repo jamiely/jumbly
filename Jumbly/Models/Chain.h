@@ -13,6 +13,8 @@
 - (NSArray*) reversedWords;
 - (NSString*) wordAtIndex: (NSUInteger) index;
 - (BOOL) containsWord: (NSString*) word;
+- (NSString*) firstWord;
+- (NSString*) lastWord;
 + (Chain*) chainWithWord: (NSString*) word;
 @property (nonatomic, strong) NSArray *words;
 @property (nonatomic, readonly) NSUInteger count;

@@ -71,7 +71,6 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="274" id="cvm-gS-ew0"/>
-                                    <constraint firstAttribute="width" constant="320" id="ute-4b-cZw"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="StandardTableCell" textLabel="uAa-sO-wGC" style="IBUITableViewCellStyleDefault" id="lgr-6r-XJq">
@@ -158,13 +157,14 @@
                         <constraints>
                             <constraint firstItem="CNc-Rp-K59" firstAttribute="leading" secondItem="wUs-MV-YWs" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="0E9-ky-CAw"/>
                             <constraint firstItem="Bar-XG-gNt" firstAttribute="baseline" secondItem="CNc-Rp-K59" secondAttribute="baseline" type="default" id="1tS-xx-08h"/>
+                            <constraint firstItem="jNW-km-9Mc" firstAttribute="trailing" secondItem="4fC-zl-yFr" secondAttribute="trailing" type="default" id="5j1-1b-lqG"/>
+                            <constraint firstItem="jNW-km-9Mc" firstAttribute="leading" secondItem="4fC-zl-yFr" secondAttribute="leading" type="default" id="8ey-Pg-Sum"/>
                             <constraint firstAttribute="bottom" secondItem="wUs-MV-YWs" secondAttribute="bottom" constant="7" id="BHD-kp-d5s"/>
                             <constraint firstItem="jNW-km-9Mc" firstAttribute="bottom" secondItem="4fC-zl-yFr" secondAttribute="bottom" priority="414" type="user" id="BbV-Kd-rpb"/>
+                            <constraint firstItem="jNW-km-9Mc" firstAttribute="centerX" secondItem="CNc-Rp-K59" secondAttribute="centerX" type="default" id="CTh-Un-5x9"/>
                             <constraint firstItem="Bar-XG-gNt" firstAttribute="leading" secondItem="CNc-Rp-K59" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="T9l-iK-zop"/>
-                            <constraint firstItem="jNW-km-9Mc" firstAttribute="leading" secondItem="4fC-zl-yFr" secondAttribute="leading" constant="-1" id="eqm-LT-WAg"/>
-                            <constraint firstItem="CNc-Rp-K59" firstAttribute="centerX" secondItem="4fC-zl-yFr" secondAttribute="centerX" type="default" id="f4O-iS-Omr"/>
                             <constraint firstItem="CNc-Rp-K59" firstAttribute="baseline" secondItem="wUs-MV-YWs" secondAttribute="baseline" type="default" id="nIM-N4-eMD"/>
-                            <constraint firstItem="jNW-km-9Mc" firstAttribute="top" secondItem="4fC-zl-yFr" secondAttribute="top" constant="149" id="tzJ-jI-J93"/>
+                            <constraint firstItem="jNW-km-9Mc" firstAttribute="top" secondItem="4fC-zl-yFr" secondAttribute="top" constant="51" id="zc1-8w-d2R"/>
                         </constraints>
                     </view>
                     <connections>

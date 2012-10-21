@@ -208,8 +208,14 @@
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
-    // @todo, check here if the word is valid and show a checkmark if the word is valid
-    
+    [self evaluateTextFieldGuess: textField];
+    return YES;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self evaluateTextFieldGuess: textField];
+}
+
+- (void) evaluateTextFieldGuess:(UITextField *)textField {
     Guess *guess = [self guessBoundToTextField: textField];
     if([textField.text isEqualToString: @""]) {
         guess.word = @"?";
@@ -218,8 +224,40 @@
         guess.word = textField.text;
     }
     [self.tableView reloadData];
+    [self evaluateWin];
+}
+
+- (void) evaluateWin {
+    if([self hasWon]) {
+        [[[UIAlertView alloc] initWithTitle: @"Won" message: @"You won" delegate: nil cancelButtonTitle: @"OK" otherButtonTitles:nil ] show];
+    }
+}
+
+- (NSArray*) enteredWords {
+    if(!chain) return @[];
     
-    return YES;
+    NSMutableArray *words = [NSMutableArray array];
+    [words addObject: [chain firstWord]];
+    [guesses enumerateObjectsUsingBlock:^(Guess *guess, NSUInteger idx, BOOL *stop) {
+        [words addObject: guess.word];
+    }];
+    [words addObject: [chain lastWord]];
+    return words;
+}
+
+- (BOOL) hasWon {
+    NSArray * words = [self enteredWords];
+    BOOL won = YES;
+    NSString * lastWord = [words objectAtIndex: 0];
+    for(NSInteger i = 1, c = words.count; i < c; i ++) {
+        NSString * word = [words objectAtIndex: i];
+        won = won
+            && ! [word isEqualToString: lastWord]
+            && [jumble word: lastWord isNeighborOf: word]
+            && [self wordIsDefined: word];
+        lastWord = word;
+    }
+    return won;
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {

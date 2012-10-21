@@ -54,4 +54,10 @@
 - (NSUInteger) count {
     return self.words.count;
 }
+- (NSString*) firstWord {
+    return [self.words objectAtIndex: 0];
+}
+- (NSString*) lastWord {
+    return [self.words objectAtIndex: self.words.count - 1];
+}
 @end
