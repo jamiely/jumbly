@@ -52,20 +52,23 @@
     textField.textAlignment = NSTextAlignmentCenter;
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
     textField.font = [UIFont boldSystemFontOfSize: [UIFont labelFontSize]];
+    textField.textColor = [UIColor whiteColor];
     [self addSubview: textField];
     
     textLabel = [[UILabel alloc] initWithFrame: frame];
     textLabel.textAlignment = NSTextAlignmentCenter;
     textLabel.font = [UIFont boldSystemFontOfSize: [UIFont labelFontSize]];
     textLabel.hidden = YES;
+    textLabel.textColor = [UIColor whiteColor];
     textLabel.backgroundColor = [UIColor clearColor];
     [self addSubview: textLabel];
     
     self.selectedBackgroundView = nil;
     self.backgroundView = nil;
+    self.backgroundColor = [UIColor clearColor];
     self.selectionStyle = UITableViewCellSeparatorStyleNone;
     
-    infoButton = [UIButton buttonWithType: UIButtonTypeInfoDark];
+    infoButton = [UIButton buttonWithType: UIButtonTypeInfoLight];
     CGRect buttonFrame = infoButton.frame;
     buttonFrame.origin = CGPointMake(padding, frame.size.height / 2.0f);
     infoButton.frame = buttonFrame;
@@ -82,7 +85,7 @@
     locked = value;
     textField.hidden = locked;
     textLabel.hidden = !locked;
-    self.backgroundColor = locked ? [UIColor yellowColor] : [UIColor whiteColor];
+    //self.backgroundColor = locked ? [UIColor yellowColor] : [UIColor whiteColor];
 }
 
 - (void) setWord:(NSString *)aWord {

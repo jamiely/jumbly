@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Jumble.h"
 #import "PuzzleViewController.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
 @interface ViewController () {
     Jumble *jumble;
@@ -23,7 +24,8 @@
 {
     [super viewDidLoad];
 	jumble = [[Jumble alloc] init];
-    rows = @[@"Puzzle", @"Options", @"Contact"];
+    rows = @[@"Puzzle", @"Contact"];
+    self.tableView.backgroundView = nil;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -45,6 +47,9 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StandardTableCell"];
     cell.textLabel.text = [rows objectAtIndex: indexPath.row];
+    cell.backgroundView = nil;
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
     return cell;
 }
 
@@ -55,6 +60,22 @@
             [self performSegueWithIdentifier:@"PuzzleSegue" sender:self];
             break;
         }
+        case 1: {
+            [self initiateContact];
+            break;
+        }
+    }
+}
+
+- (void) initiateContact {
+    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+    [controller setToRecipients: @[@"jumbly@angelforge.org"]];
+    [controller setSubject:@"[Jumbly] Suggestions"];
+    [controller setMessageBody:@"Here are some suggestions I have for Jumbly..." isHTML:NO];
+    if (controller) {
+        [self presentViewController: controller animated:YES completion:^{
+            // do nothing
+        }];
     }
 }
 

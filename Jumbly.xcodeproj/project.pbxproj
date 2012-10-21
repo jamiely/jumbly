@@ -32,6 +32,8 @@
 		6D631EA6163341980056F10E /* Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D631EA5163341980056F10E /* Chain.m */; };
 		6D631EA916336B260056F10E /* PuzzleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D631EA816336B260056F10E /* PuzzleViewController.m */; };
 		6D631EAC163398620056F10E /* EntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D631EAB163398620056F10E /* EntryTableCell.m */; };
+		6DD3A5AA1634ABFB002ACE4A /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DD3A5A91634ABFB002ACE4A /* wood.jpg */; };
+		6DD3A5AC1634B1DD002ACE4A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD3A5AB1634B1DD002ACE4A /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		6D631EA816336B260056F10E /* PuzzleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PuzzleViewController.m; path = Controllers/PuzzleViewController.m; sourceTree = "<group>"; };
 		6D631EAA163398620056F10E /* EntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntryTableCell.h; path = Views/EntryTableCell.h; sourceTree = "<group>"; };
 		6D631EAB163398620056F10E /* EntryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntryTableCell.m; path = Views/EntryTableCell.m; sourceTree = "<group>"; };
+		6DD3A5A91634ABFB002ACE4A /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wood.jpg; path = Assets/wood.jpg; sourceTree = "<group>"; };
+		6DD3A5AB1634B1DD002ACE4A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DD3A5AC1634B1DD002ACE4A /* MessageUI.framework in Frameworks */,
 				6D631E5F163340700056F10E /* UIKit.framework in Frameworks */,
 				6D631E61163340700056F10E /* Foundation.framework in Frameworks */,
 				6D631E63163340700056F10E /* CoreGraphics.framework in Frameworks */,
@@ -111,6 +116,7 @@
 		6D631E4F163340700056F10E = {
 			isa = PBXGroup;
 			children = (
+				6DD3A5AB1634B1DD002ACE4A /* MessageUI.framework */,
 				6D631E64163340700056F10E /* Jumbly */,
 				6D631E8B163340700056F10E /* JumblyTests */,
 				6D631E5D163340700056F10E /* Frameworks */,
@@ -190,6 +196,7 @@
 		6D631E9C1633407E0056F10E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				6DD3A5A91634ABFB002ACE4A /* wood.jpg */,
 				6D571BD81634536B008CFA25 /* define.png */,
 				6D1F3F1616342EF000409872 /* dictionary-cache.txt */,
 			);
@@ -310,6 +317,7 @@
 				6D631E7B163340700056F10E /* MainStoryboard_iPad.storyboard in Resources */,
 				6D1F3F1716342EF000409872 /* dictionary-cache.txt in Resources */,
 				6D571BD91634536B008CFA25 /* define.png in Resources */,
+				6DD3A5AA1634ABFB002ACE4A /* wood.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,6 +28,11 @@
     defineImage = [UIImage imageNamed:@"define.png"];
     [self.gestureRecognizer addTarget:self action:@selector(onDefine:)];
     self.gestureRecognizer.delegate = self;
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundView = nil;
+    
+    self.activityIndicator.color = [UIColor whiteColor];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -40,8 +45,11 @@
 - (void) loadPuzzle {
     if(![self.activityIndicator superview]) {
         [self.view addSubview: self.activityIndicator];
+        CGRect indicatorFrame = self.activityIndicator.frame;
+        // put it in the upper right
+        indicatorFrame.origin.x = self.view.frame.size.width - indicatorFrame.size.width;
+        self.activityIndicator.frame = indicatorFrame;
         [self.activityIndicator startAnimating];
-        self.activityIndicator.color = [UIColor redColor];
     }
 
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -75,6 +83,8 @@
     // @todo, add an activity indicator
     [self.tableView reloadData];
 }
+
+#pragma mark - UITable delegate/datasource functions
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -137,6 +147,7 @@
     else {
         cell.word = @"Generating...";
         cell.locked = YES;
+        cell.infoButton.hidden = YES;
     }
     
     return cell;
