@@ -10,6 +10,8 @@
 
 @interface Chain : NSObject
 - (NSArray*) addWord: (NSString*) word;
+- (NSArray*) reversedWords;
+- (NSString*) wordAtIndex: (NSUInteger) index;
 + (Chain*) chainWithWord: (NSString*) word;
 @property (nonatomic, strong) NSArray *words;
 @property (nonatomic, readonly) NSUInteger count;

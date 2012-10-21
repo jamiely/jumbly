@@ -100,5 +100,7 @@
     }
     return [NSArray arrayWithArray: words];
 }
-
+- (NSString*) drawWord {
+    return [cache objectAtIndex: arc4random() % cache.count];
+}
 @end

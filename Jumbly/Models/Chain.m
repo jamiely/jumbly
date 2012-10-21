@@ -31,6 +31,17 @@
     }
     return self.words;
 }
+- (NSString*) wordAtIndex: (NSUInteger) index {
+    return [self.words objectAtIndex: index];
+}
+- (NSArray*) reversedWords {
+    NSMutableArray *rev = [NSMutableArray array];
+    NSEnumerator *enumerator = [self.words reverseObjectEnumerator];
+    for(NSString* word in enumerator) {
+        [rev addObject: word];
+    }
+    return [NSArray arrayWithArray: rev];
+}
 + (Chain*) chainWithWord: (NSString*) word {
     Chain *chain = [[Chain alloc] init];
     [chain addWord: word];

@@ -16,5 +16,5 @@
 - (NSArray*) regexsWithWord: (NSString*) word;
 - (Chain*) chainWithWord: (NSString*) word andLength: (NSInteger) length;
 - (NSArray*) getWords: (NSRegularExpression*) regex;
-
+- (NSString*) drawWord;
 @end

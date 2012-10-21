@@ -27,6 +27,7 @@
 		6D631E9F163340A80056F10E /* dictionary-cache.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D631E9E163340A80056F10E /* dictionary-cache.txt */; };
 		6D631EA3163340CD0056F10E /* Jumble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D631EA2163340CD0056F10E /* Jumble.m */; };
 		6D631EA6163341980056F10E /* Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D631EA5163341980056F10E /* Chain.m */; };
+		6D631EA916336B260056F10E /* PuzzleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D631EA816336B260056F10E /* PuzzleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		6D631EA2163340CD0056F10E /* Jumble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Jumble.m; path = Models/Jumble.m; sourceTree = "<group>"; };
 		6D631EA4163341980056F10E /* Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chain.h; path = Models/Chain.h; sourceTree = "<group>"; };
 		6D631EA5163341980056F10E /* Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chain.m; path = Models/Chain.m; sourceTree = "<group>"; };
+		6D631EA716336B260056F10E /* PuzzleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PuzzleViewController.h; path = Controllers/PuzzleViewController.h; sourceTree = "<group>"; };
+		6D631EA816336B260056F10E /* PuzzleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PuzzleViewController.m; path = Controllers/PuzzleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +188,8 @@
 			children = (
 				6D631E7C163340700056F10E /* ViewController.h */,
 				6D631E7D163340700056F10E /* ViewController.m */,
+				6D631EA716336B260056F10E /* PuzzleViewController.h */,
+				6D631EA816336B260056F10E /* PuzzleViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 				6D631E7E163340700056F10E /* ViewController.m in Sources */,
 				6D631EA3163340CD0056F10E /* Jumble.m in Sources */,
 				6D631EA6163341980056F10E /* Chain.m in Sources */,
+				6D631EA916336B260056F10E /* PuzzleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

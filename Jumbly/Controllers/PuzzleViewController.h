@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PuzzleViewController.h
 //  Jumbly
 //
 //  Created by Jamie Ly on 20/10/2012.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Jumble.h"
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PuzzleViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) Jumble *jumble;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
 @end
