@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface EntryTableCell : UITableViewCell
+@property (nonatomic, strong) UILabel *textLabel;
+@property (nonatomic, copy) NSString* word;
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, assign) BOOL validWord;
 @property (nonatomic, strong) UIButton *infoButton;
+@property (nonatomic, assign) BOOL locked;
 @end

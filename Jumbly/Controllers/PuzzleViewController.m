@@ -14,6 +14,7 @@
 @interface PuzzleViewController () {
     Chain *chain;
     NSArray *guesses;
+    UIImage *defineImage;
 }
 @end
 
@@ -24,6 +25,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    defineImage = [UIImage imageNamed:@"define.png"];
+    [self.gestureRecognizer addTarget:self action:@selector(onDefine:)];
+    self.gestureRecognizer.delegate = self;
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -97,36 +101,42 @@
 
 - (UITableViewCell*) tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell;
+    EntryTableCell *cell = cell = [tableView dequeueReusableCellWithIdentifier:@"EntryTableCell"];
     
     if(chain) {
         NSInteger row = indexPath.row;
         if(![self isGuessRow: indexPath]) {
-            cell = [tableView dequeueReusableCellWithIdentifier:@"StandardTableCell"];
-            cell.textLabel.text = [chain wordAtIndex: indexPath.row];
+            cell.word = [chain wordAtIndex: indexPath.row];
+            cell.infoButton.tag = indexPath.row;
+            [cell.infoButton addTarget:self action:@selector(onDefine:) forControlEvents:UIControlEventTouchUpInside];
+            cell.infoButton.hidden = NO;
+            cell.locked = YES;
         }
         else {
             NSInteger guessRow = row - 1;
             Guess *guess = [guesses objectAtIndex: guessRow];
             
-            cell = [tableView dequeueReusableCellWithIdentifier:@"EntryTableCell"];
-            //cell.textLabel.text = @"?";
-            EntryTableCell *entryCell = (EntryTableCell *) cell;
-            entryCell.textField.delegate = self;
+            cell.textField.delegate = self;
             
             NSString *previousWord = [self wordBeforeIndexPath: indexPath];
             
-            entryCell.validWord = [self wordIsDefined: guess.word] &&
+            cell.validWord = [self wordIsDefined: guess.word] &&
                 [jumble word: guess.word isNeighborOf: previousWord];
             
-            entryCell.textField.text = guess.word;
-            
-            [self bindTextField: entryCell.textField toGuess: guess];
+            cell.word = guess.word;
+            cell.infoButton.hidden = YES;
+            if([self wordIsDefined: guess.word]) {
+                cell.infoButton.tag = indexPath.row;
+                [cell.infoButton addTarget:self action:@selector(onDefine:) forControlEvents:UIControlEventTouchUpInside];
+                cell.infoButton.hidden = NO;
+            }
+            cell.locked = NO;
+            [self bindTextField: cell.textField toGuess: guess];
         }
     }
     else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"StandardTableCell"];
-        cell.textLabel.text = @"Puzzle could not be generated.";
+        cell.word = @"Generating...";
+        cell.locked = YES;
     }
     
     return cell;
@@ -150,14 +160,10 @@
     return !(row == 0 || row == chain.count - 1);
 }
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(!chain) return;
-    
-    NSString *word = [self wordAtIndexPath: indexPath];
-    
+- (void) showDefinition: (NSString*) word {
     if([self wordIsDefined: word]) {
         UIReferenceLibraryViewController * controller =
-            [[UIReferenceLibraryViewController alloc] initWithTerm: word];
+        [[UIReferenceLibraryViewController alloc] initWithTerm: word];
         [self presentViewController: controller animated: YES completion:^{
             // ?
         }];
@@ -186,6 +192,13 @@
     }];
 }
 
+- (void)onDefine:(id)sender {
+    NSInteger row = [sender tag];
+    NSString *word = [self wordAtIndexPath: [NSIndexPath indexPathForItem:row
+                                                                inSection:0]];
+    [self showDefinition: word];
+}
+
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if([textField.text isEqualToString: @"?"]) {
         textField.text = @"";
@@ -206,6 +219,14 @@
     }
     [self.tableView reloadData];
     
+    return YES;
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     return YES;
 }
 

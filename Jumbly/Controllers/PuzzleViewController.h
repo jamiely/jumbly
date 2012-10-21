@@ -10,11 +10,12 @@
 #import "Jumble.h"
 
 @interface PuzzleViewController : UIViewController <UITableViewDataSource,
-    UITableViewDelegate, UITextFieldDelegate>
+    UITableViewDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) Jumble *jumble;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)onNewPuzzle:(id)sender;
 - (IBAction)onShowSolution:(id)sender;
 - (IBAction)onQuit:(id)sender;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *gestureRecognizer;
 @end

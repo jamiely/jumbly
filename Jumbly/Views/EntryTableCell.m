@@ -13,6 +13,9 @@
 @synthesize textField;
 @synthesize validWord;
 @synthesize infoButton;
+@synthesize textLabel;
+@synthesize locked;
+@synthesize word;
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder: aDecoder];
@@ -45,24 +48,47 @@
     frame.size.height -= padding*2;
     frame.size.width -= horizontalPadding*2;
     textField = [[UITextField alloc] initWithFrame: frame];
-
+    
     textField.textAlignment = NSTextAlignmentCenter;
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
     textField.font = [UIFont boldSystemFontOfSize: [UIFont labelFontSize]];
     [self addSubview: textField];
     
+    textLabel = [[UILabel alloc] initWithFrame: frame];
+    textLabel.textAlignment = NSTextAlignmentCenter;
+    textLabel.font = [UIFont boldSystemFontOfSize: [UIFont labelFontSize]];
+    textLabel.hidden = YES;
+    textLabel.backgroundColor = [UIColor clearColor];
+    [self addSubview: textLabel];
+    
     self.selectedBackgroundView = nil;
     self.backgroundView = nil;
     self.selectionStyle = UITableViewCellSeparatorStyleNone;
     
-    self.imageView.image = [UIImage imageNamed:@"define.png"];
-    self.imageView.userInteractionEnabled = YES;
+    infoButton = [UIButton buttonWithType: UIButtonTypeInfoDark];
+    CGRect buttonFrame = infoButton.frame;
+    buttonFrame.origin = CGPointMake(padding, frame.size.height / 2.0f);
+    infoButton.frame = buttonFrame;
+    [self.contentView addSubview: infoButton];
 }
 
 - (void) setValidWord:(BOOL)aValidWord {
     validWord = aValidWord;
     self.accessoryType = validWord ? UITableViewCellAccessoryCheckmark :
         UITableViewCellAccessoryNone;
+}
+
+- (void) setLocked: (BOOL) value {
+    locked = value;
+    textField.hidden = locked;
+    textLabel.hidden = !locked;
+    self.backgroundColor = locked ? [UIColor yellowColor] : [UIColor whiteColor];
+}
+
+- (void) setWord:(NSString *)aWord {
+    word = aWord;
+    textField.text = word;
+    textLabel.text = word;
 }
 
 @end

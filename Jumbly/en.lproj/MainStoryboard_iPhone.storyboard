@@ -169,6 +169,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Do3-2h-hBd" id="g4e-WG-3a2"/>
+                        <outlet property="gestureRecognizer" destination="XeU-dz-XSc" id="rRH-tr-4nW"/>
                         <outlet property="tableView" destination="jNW-km-9Mc" id="Hxh-Ts-NBU"/>
                     </connections>
                 </viewController>
@@ -177,6 +178,11 @@
                     <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
+                <tapGestureRecognizer id="XeU-dz-XSc">
+                    <connections>
+                        <outlet property="delegate" destination="DQf-Kc-Rgr" id="QoT-G2-yCV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="836" y="136"/>
         </scene>
@@ -195,6 +201,7 @@
                 <relationship kind="action" name="onQuit:"/>
                 <relationship kind="action" name="onShowSolution:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="gestureRecognizer" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
