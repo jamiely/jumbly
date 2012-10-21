@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "Jumble.h"
 #import "PuzzleViewController.h"
-#import <MessageUI/MFMailComposeViewController.h>
 
 @interface ViewController () {
     Jumble *jumble;
@@ -69,6 +68,7 @@
 
 - (void) initiateContact {
     MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+    controller.mailComposeDelegate = self;
     [controller setToRecipients: @[@"jumbly@angelforge.org"]];
     [controller setSubject:@"[Jumbly] Suggestions"];
     [controller setMessageBody:@"Here are some suggestions I have for Jumbly..." isHTML:NO];
@@ -77,6 +77,15 @@
             // do nothing
         }];
     }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+       // do nothing
+    }];
 }
 
 @end
