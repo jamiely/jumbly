@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Jumble.h"
 
-@interface PuzzleViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PuzzleViewController : UIViewController <UITableViewDataSource,
+    UITableViewDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) Jumble *jumble;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)onNewPuzzle:(id)sender;
+- (IBAction)onShowSolution:(id)sender;
 @end

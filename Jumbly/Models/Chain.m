@@ -25,6 +25,7 @@
     return self;
 }
 - (NSArray*) addWord: (NSString*) word {
+    word = [word lowercaseString];
     if(![wordsSet containsObject: word]) {
         words = [self.words arrayByAddingObject: word];
         [wordsSet addObject: word];
@@ -41,6 +42,9 @@
         [rev addObject: word];
     }
     return [NSArray arrayWithArray: rev];
+}
+- (BOOL) containsWord: (NSString*) word {
+    return [wordsSet containsObject: [word lowercaseString]];
 }
 + (Chain*) chainWithWord: (NSString*) word {
     Chain *chain = [[Chain alloc] init];

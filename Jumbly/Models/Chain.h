@@ -12,6 +12,7 @@
 - (NSArray*) addWord: (NSString*) word;
 - (NSArray*) reversedWords;
 - (NSString*) wordAtIndex: (NSUInteger) index;
+- (BOOL) containsWord: (NSString*) word;
 + (Chain*) chainWithWord: (NSString*) word;
 @property (nonatomic, strong) NSArray *words;
 @property (nonatomic, readonly) NSUInteger count;

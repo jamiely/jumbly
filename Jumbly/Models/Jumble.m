@@ -103,4 +103,16 @@
 - (NSString*) drawWord {
     return [cache objectAtIndex: arc4random() % cache.count];
 }
+
+- (BOOL) word: (NSString*) word isNeighborOf: (NSString*) neighbor {
+    if(word.length != neighbor.length) return NO;
+
+    NSInteger diffCount = 0;
+    for(NSInteger i = 0, c = word.length; i < c; i ++ ) {
+        if([word characterAtIndex: i] != [neighbor characterAtIndex: i]) {
+            diffCount ++;
+        }
+    }
+    return diffCount <= 1;
+}
 @end

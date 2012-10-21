@@ -7,9 +7,13 @@
 //
 
 #import "PuzzleViewController.h"
+#import "EntryTableCell.h"
+#import "Guess.h"
+#import <objc/runtime.h>
 
 @interface PuzzleViewController () {
     Chain *chain;
+    NSArray *guesses;
 }
 @end
 
@@ -20,7 +24,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadPuzzle];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear: animated];
+    if(!chain) {
+        [self loadPuzzle];
+    }
 }
 
 - (void) loadPuzzle {
@@ -46,6 +56,15 @@
     // get a new puzzle
     NSString *initialWord = [jumble drawWord];
     chain = [jumble chainWithWord: initialWord andLength: 5];
+    
+    if(chain) {
+        NSInteger count = chain.count;
+        NSMutableArray *_guesses = [NSMutableArray arrayWithCapacity: count-2];
+        for(NSInteger i = 0, c = count-2; i < c; i++) {
+            [_guesses addObject: [[Guess alloc] init]];
+        }
+        guesses = [NSArray arrayWithArray:_guesses];
+    }
     // @todo, it's possible for this to be blank
     // @todo, add an activity indicator
     [self.tableView reloadData];
@@ -60,24 +79,81 @@
     return chain.count;
 }
 
-- (UITableViewCell*) tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StandardTableCell"];
-    if(chain) {
-        cell.textLabel.text = [chain wordAtIndex: indexPath.row];
+- (NSString*) wordAtIndexPath: (NSIndexPath*) ip {
+    if([self isGuessRow: ip]) {
+        return [[guesses objectAtIndex: ip.row - 1] word];
     }
     else {
+        return [chain wordAtIndex: ip.row];
+    }
+}
+
+- (NSString*) wordBeforeIndexPath: (NSIndexPath*) ip {
+    return [self wordAtIndexPath:
+            [NSIndexPath indexPathForRow: ip.row - 1 inSection: ip.section]];
+}
+
+- (UITableViewCell*) tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell;
+    
+    if(chain) {
+        NSInteger row = indexPath.row;
+        if(![self isGuessRow: indexPath]) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"StandardTableCell"];
+            cell.textLabel.text = [chain wordAtIndex: indexPath.row];
+        }
+        else {
+            NSInteger guessRow = row - 1;
+            Guess *guess = [guesses objectAtIndex: guessRow];
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:@"EntryTableCell"];
+            //cell.textLabel.text = @"?";
+            EntryTableCell *entryCell = (EntryTableCell *) cell;
+            entryCell.textField.delegate = self;
+            
+            NSString *previousWord = [self wordBeforeIndexPath: indexPath];
+            
+            entryCell.validWord = [self wordIsDefined: guess.word] &&
+                [jumble word: guess.word isNeighborOf: previousWord];
+            
+            entryCell.textField.text = guess.word;
+            
+            [self bindTextField: entryCell.textField toGuess: guess];
+        }
+    }
+    else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"StandardTableCell"];
         cell.textLabel.text = @"Puzzle could not be generated.";
     }
     
     return cell;
 }
 
+- (char*) guessKey {
+    static char _guessKey;
+    return &_guessKey;
+}
+
+- (void) bindTextField: (UITextField*) field toGuess: (Guess*) guess {
+    objc_setAssociatedObject(field, [self guessKey], guess, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (Guess*) guessBoundToTextField: (UITextField*) field {
+    return objc_getAssociatedObject(field, [self guessKey]);
+}
+
+- (BOOL) isGuessRow: (NSIndexPath*) ip {
+    NSInteger row = ip.row;
+    return !(row == 0 || row == chain.count - 1);
+}
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if(!chain) return;
     
-    NSString *word = [chain wordAtIndex: indexPath.row];
-    if([UIReferenceLibraryViewController dictionaryHasDefinitionForTerm: word]) {
+    NSString *word = [self wordAtIndexPath: indexPath];
+    
+    if([self wordIsDefined: word]) {
         UIReferenceLibraryViewController * controller =
             [[UIReferenceLibraryViewController alloc] initWithTerm: word];
         [self presentViewController: controller animated: YES completion:^{
@@ -86,7 +162,31 @@
     }
 }
 
+- (BOOL) wordIsDefined: (NSString*) word {
+    return [UIReferenceLibraryViewController dictionaryHasDefinitionForTerm: word];
+}
+
 - (IBAction)onNewPuzzle:(id)sender {
     [self loadPuzzle];
 }
+
+- (IBAction)onShowSolution:(id)sender {
+    for(NSInteger i = 0, c = guesses.count; i < c; i ++) {
+        Guess *guess = [guesses objectAtIndex: i];
+        guess.word = [chain wordAtIndex: i+1];
+    }
+    [self.tableView reloadData];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    // @todo, check here if the word is valid and show a checkmark if the word is valid
+    
+    Guess *guess = [self guessBoundToTextField: textField];
+    guess.word = textField.text;
+    [self.tableView reloadData];
+    
+    return YES;
+}
+
 @end

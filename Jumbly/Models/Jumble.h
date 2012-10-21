@@ -17,4 +17,5 @@
 - (Chain*) chainWithWord: (NSString*) word andLength: (NSInteger) length;
 - (NSArray*) getWords: (NSRegularExpression*) regex;
 - (NSString*) drawWord;
+- (BOOL) word: (NSString*) word isNeighborOf: (NSString*) neighbor;
 @end
