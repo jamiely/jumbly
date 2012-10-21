@@ -16,4 +16,5 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)onNewPuzzle:(id)sender;
 - (IBAction)onShowSolution:(id)sender;
+- (IBAction)onQuit:(id)sender;
 @end

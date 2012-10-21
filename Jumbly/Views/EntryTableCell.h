@@ -11,4 +11,5 @@
 @interface EntryTableCell : UITableViewCell
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, assign) BOOL validWord;
+@property (nonatomic, strong) UIButton *infoButton;
 @end

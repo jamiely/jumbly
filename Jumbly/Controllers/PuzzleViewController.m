@@ -61,7 +61,9 @@
         NSInteger count = chain.count;
         NSMutableArray *_guesses = [NSMutableArray arrayWithCapacity: count-2];
         for(NSInteger i = 0, c = count-2; i < c; i++) {
-            [_guesses addObject: [[Guess alloc] init]];
+            Guess *guess = [[Guess alloc] init];
+            guess.word = @"?";
+            [_guesses addObject: guess];
         }
         guesses = [NSArray arrayWithArray:_guesses];
     }
@@ -178,12 +180,30 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)onQuit:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
+       // none
+    }];
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if([textField.text isEqualToString: @"?"]) {
+        textField.text = @"";
+    }
+    return YES;
+}
+
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     // @todo, check here if the word is valid and show a checkmark if the word is valid
     
     Guess *guess = [self guessBoundToTextField: textField];
-    guess.word = textField.text;
+    if([textField.text isEqualToString: @""]) {
+        guess.word = @"?";
+    }
+    else {
+        guess.word = textField.text;
+    }
     [self.tableView reloadData];
     
     return YES;

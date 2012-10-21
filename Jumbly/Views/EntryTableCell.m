@@ -12,6 +12,7 @@
 
 @synthesize textField;
 @synthesize validWord;
+@synthesize infoButton;
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder: aDecoder];
@@ -39,18 +40,23 @@
 
 - (void) initialize: (CGRect) frame {
     NSInteger padding = 10;
-    NSInteger horizontalPadding = 20;
+    NSInteger horizontalPadding = 100;
     frame.origin = CGPointMake(horizontalPadding, padding);
     frame.size.height -= padding*2;
-    frame.size.width -= horizontalPadding*4;
+    frame.size.width -= horizontalPadding*2;
     textField = [[UITextField alloc] initWithFrame: frame];
-    textField.backgroundColor = [UIColor yellowColor];
+
     textField.textAlignment = NSTextAlignmentCenter;
+    textField.autocorrectionType = UITextAutocorrectionTypeNo;
+    textField.font = [UIFont boldSystemFontOfSize: [UIFont labelFontSize]];
     [self addSubview: textField];
     
     self.selectedBackgroundView = nil;
     self.backgroundView = nil;
     self.selectionStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.imageView.image = [UIImage imageNamed:@"define.png"];
+    self.imageView.userInteractionEnabled = YES;
 }
 
 - (void) setValidWord:(BOOL)aValidWord {
