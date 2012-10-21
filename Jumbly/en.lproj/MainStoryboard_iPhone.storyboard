@@ -69,6 +69,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="jNW-km-9Mc">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="298" id="dCH-EO-abG"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="StandardTableCell" textLabel="uAa-sO-wGC" style="IBUITableViewCellStyleDefault" id="lgr-6r-XJq">
                                         <rect key="frame" x="0.0" y="46" width="320" height="46"/>
@@ -92,20 +95,42 @@
                                     <outlet property="delegate" destination="DQf-Kc-Rgr" id="tw3-sN-Fsz"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUs-MV-YWs">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="mze-ZU-XVo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="New Puzzle">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onNewPuzzle:" destination="DQf-Kc-Rgr" eventType="touchUpInside" id="TdL-qY-ux7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jNW-km-9Mc" firstAttribute="bottom" secondItem="4fC-zl-yFr" secondAttribute="bottom" type="default" id="BbV-Kd-rpb"/>
+                            <constraint firstItem="jNW-km-9Mc" firstAttribute="bottom" secondItem="4fC-zl-yFr" secondAttribute="bottom" priority="414" type="user" id="BbV-Kd-rpb"/>
                             <constraint firstItem="jNW-km-9Mc" firstAttribute="trailing" secondItem="4fC-zl-yFr" secondAttribute="trailing" type="default" id="Clr-Wm-sUb"/>
+                            <constraint firstItem="wUs-MV-YWs" firstAttribute="centerX" secondItem="jNW-km-9Mc" secondAttribute="centerX" type="default" id="d2A-1x-Ptn"/>
                             <constraint firstItem="jNW-km-9Mc" firstAttribute="leading" secondItem="4fC-zl-yFr" secondAttribute="leading" type="default" id="d9n-tZ-Fke"/>
-                            <constraint firstItem="jNW-km-9Mc" firstAttribute="top" secondItem="4fC-zl-yFr" secondAttribute="top" type="default" id="mq9-vF-tvB"/>
+                            <constraint firstItem="wUs-MV-YWs" firstAttribute="top" secondItem="4fC-zl-yFr" secondAttribute="top" constant="9" id="xeH-m7-teB"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Do3-2h-hBd" id="g4e-WG-3a2"/>
                         <outlet property="tableView" destination="jNW-km-9Mc" id="Hxh-Ts-NBU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="347-WB-rQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" id="Do3-2h-hBd">
+                    <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </objects>
             <point key="canvasLocation" x="836" y="136"/>
         </scene>
@@ -117,6 +142,8 @@
         <class className="PuzzleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PuzzleViewController.h"/>
             <relationships>
+                <relationship kind="action" name="onNewPuzzle:"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
