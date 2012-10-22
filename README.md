@@ -7,6 +7,7 @@ https://github.com/jamiely/Word-Jumble.
 
 * Allow players to rearrange cells
 * Do not allow players to repeat words
+* Randomize generation of words
 
 # Media
 

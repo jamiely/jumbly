@@ -291,6 +291,7 @@
 #pragma mark - Alert View Delegate functions
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    requiresReset = NO;
     [self loadPuzzle];
 }
 
