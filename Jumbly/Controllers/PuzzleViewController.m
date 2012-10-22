@@ -15,6 +15,7 @@
     Chain *chain;
     NSArray *guesses;
     UIImage *defineImage;
+    BOOL requiresReset;
 }
 @end
 
@@ -33,6 +34,8 @@
     self.tableView.backgroundView = nil;
     
     self.activityIndicator.color = [UIColor whiteColor];
+    
+    requiresReset = NO;
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -243,7 +246,10 @@
 
 - (void) evaluateWin {
     if([self hasWon]) {
-        [[[UIAlertView alloc] initWithTitle: @"Won" message: @"You won" delegate: nil cancelButtonTitle: @"OK" otherButtonTitles:nil ] show];
+        if(!requiresReset) {
+            [[[UIAlertView alloc] initWithTitle: @"Won" message: @"You won" delegate: self cancelButtonTitle: @"OK" otherButtonTitles:nil ] show];
+            requiresReset = YES;
+        }
     }
 }
 
@@ -280,6 +286,12 @@
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     return YES;
+}
+
+#pragma mark - Alert View Delegate functions
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    [self loadPuzzle];
 }
 
 @end
