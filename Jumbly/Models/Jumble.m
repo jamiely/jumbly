@@ -7,6 +7,7 @@
 //
 
 #import "Jumble.h"
+#import "NSArray+Shuffle.h"
 
 @interface Jumble () {
     NSArray *cache;
@@ -36,7 +37,7 @@
 }
 
 - (NSRegularExpression*) regexWithWord: (NSString*) word {
-    return [self regexWithWord: word andPosition: arc4random() % word.length];
+    return [self regexWithWord: word andPosition: arc4random_uniform(word.length)];
 }
 
 - (NSRegularExpression*) regexWithWord: (NSString*) word andPosition: (NSUInteger) pos {
@@ -74,7 +75,7 @@
 - (Chain*) tryRegex: (NSRegularExpression*) regex
            withWord: (NSString*) word withLength: (NSInteger) length {
     
-    NSArray *words = [self getWords: regex];
+    NSArray *words = [[self getWords: regex] shuffle];
     Chain* chain = nil;
     for(NSInteger i = 0, count = words.count; i < count; i++) {
         NSString *nextWord = [words objectAtIndex: i];
@@ -101,7 +102,7 @@
     return [NSArray arrayWithArray: words];
 }
 - (NSString*) drawWord {
-    return [cache objectAtIndex: arc4random() % cache.count];
+    return [cache objectAtIndex: arc4random_uniform(cache.count)];
 }
 
 - (BOOL) word: (NSString*) word isNeighborOf: (NSString*) neighbor {

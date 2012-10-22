@@ -36,6 +36,7 @@
 		6DD3A5AC1634B1DD002ACE4A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD3A5AB1634B1DD002ACE4A /* MessageUI.framework */; };
 		6DD3A5AF1634CABF002ACE4A /* jumbly_logo_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD3A5AD1634CABF002ACE4A /* jumbly_logo_iPhone.png */; };
 		6DD3A5B01634CABF002ACE4A /* jumbly_logo_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD3A5AE1634CABF002ACE4A /* jumbly_logo_iPhone@2x.png */; };
+		6DD3A5B41634D81B002ACE4A /* NSArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD3A5B31634D81B002ACE4A /* NSArray+Shuffle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		6DD3A5AB1634B1DD002ACE4A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6DD3A5AD1634CABF002ACE4A /* jumbly_logo_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jumbly_logo_iPhone.png; path = Assets/jumbly_logo_iPhone.png; sourceTree = "<group>"; };
 		6DD3A5AE1634CABF002ACE4A /* jumbly_logo_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jumbly_logo_iPhone@2x.png"; path = "Assets/jumbly_logo_iPhone@2x.png"; sourceTree = "<group>"; };
+		6DD3A5B21634D81B002ACE4A /* NSArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Shuffle.h"; path = "Categories/NSArray+Shuffle.h"; sourceTree = "<group>"; };
+		6DD3A5B31634D81B002ACE4A /* NSArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Shuffle.m"; path = "Categories/NSArray+Shuffle.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 		6D631E64163340700056F10E /* Jumbly */ = {
 			isa = PBXGroup;
 			children = (
+				6DD3A5B11634D7FE002ACE4A /* Categories */,
 				6D631EAD163398660056F10E /* Views */,
 				6D631EA0163340B00056F10E /* Models */,
 				6D631E9D163340830056F10E /* Controllers */,
@@ -242,6 +246,15 @@
 				6D631EAB163398620056F10E /* EntryTableCell.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		6DD3A5B11634D7FE002ACE4A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				6DD3A5B21634D81B002ACE4A /* NSArray+Shuffle.h */,
+				6DD3A5B31634D81B002ACE4A /* NSArray+Shuffle.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +382,7 @@
 				6D631EAC163398620056F10E /* EntryTableCell.m in Sources */,
 				6D1F3F1116339DE400409872 /* EntryTableCellViewController.m in Sources */,
 				6D1F3F1516339F1100409872 /* Guess.m in Sources */,
+				6DD3A5B41634D81B002ACE4A /* NSArray+Shuffle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
