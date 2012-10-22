@@ -44,14 +44,22 @@
                                     <outlet property="delegate" destination="2" id="mjj-Dc-4cI"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="jumbly_logo_iPhone.png" translatesAutoresizingMaskIntoConstraints="NO" id="l7m-N9-Y2W">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="owv-iL-paA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lLN-un-tUF" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="1HX-PL-67k"/>
+                            <constraint firstItem="l7m-N9-Y2W" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1I2-iE-xL6"/>
+                            <constraint firstItem="l7m-N9-Y2W" firstAttribute="top" secondItem="3" secondAttribute="top" constant="28" id="Ipf-aD-XNa"/>
                             <constraint firstItem="rJP-Cs-Qhi" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="PCE-dF-TaC"/>
                             <constraint firstItem="rJP-Cs-Qhi" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="UrD-LH-EoI"/>
                             <constraint firstItem="rJP-Cs-Qhi" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="ZdD-mv-AY9"/>
                             <constraint firstItem="lLN-un-tUF" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="ZeA-Gs-t7b"/>
+                            <constraint firstAttribute="trailing" secondItem="l7m-N9-Y2W" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dPx-c3-zB5"/>
                             <constraint firstItem="rJP-Cs-Qhi" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="eAJ-97-z1p"/>
                             <constraint firstItem="lLN-un-tUF" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="vzH-62-Qol"/>
                         </constraints>
@@ -143,6 +151,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bar-XG-gNt">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="X2Y-Ur-j3i"/>
                                 </constraints>
@@ -160,8 +169,8 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Puzzle:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaL-Gx-9Tf">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="148" id="5ee-Ub-MWg"/>
-                                    <constraint firstAttribute="height" constant="21" id="ntL-uu-ZzK"/>
+                                    <constraint firstAttribute="width" constant="297" id="16I-R7-W8f"/>
+                                    <constraint firstAttribute="height" constant="36" id="a2e-ui-nqJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -177,20 +186,21 @@
                             <constraint firstAttribute="bottom" secondItem="wUs-MV-YWs" secondAttribute="bottom" constant="7" id="BHD-kp-d5s"/>
                             <constraint firstItem="jNW-km-9Mc" firstAttribute="bottom" secondItem="4fC-zl-yFr" secondAttribute="bottom" priority="414" type="user" id="BbV-Kd-rpb"/>
                             <constraint firstItem="jNW-km-9Mc" firstAttribute="centerX" secondItem="CNc-Rp-K59" secondAttribute="centerX" type="default" id="CTh-Un-5x9"/>
-                            <constraint firstItem="MaL-Gx-9Tf" firstAttribute="leading" secondItem="4fC-zl-yFr" secondAttribute="leading" constant="12" id="D1X-dn-l2q"/>
                             <constraint firstItem="Bar-XG-gNt" firstAttribute="leading" secondItem="CNc-Rp-K59" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="T9l-iK-zop"/>
+                            <constraint firstItem="MaL-Gx-9Tf" firstAttribute="top" secondItem="4fC-zl-yFr" secondAttribute="top" constant="7" id="VFY-gw-EGP"/>
+                            <constraint firstItem="MaL-Gx-9Tf" firstAttribute="centerX" secondItem="jNW-km-9Mc" secondAttribute="centerX" type="default" id="WZ0-LS-Cne"/>
                             <constraint firstItem="rNh-HP-MR0" firstAttribute="leading" secondItem="4fC-zl-yFr" secondAttribute="leading" type="default" id="a87-ab-4w8"/>
-                            <constraint firstItem="MaL-Gx-9Tf" firstAttribute="top" secondItem="4fC-zl-yFr" secondAttribute="top" constant="13" id="hts-iF-rsh"/>
                             <constraint firstItem="CNc-Rp-K59" firstAttribute="baseline" secondItem="wUs-MV-YWs" secondAttribute="baseline" type="default" id="nIM-N4-eMD"/>
+                            <constraint firstItem="jNW-km-9Mc" firstAttribute="top" secondItem="MaL-Gx-9Tf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qCR-bL-Jst"/>
                             <constraint firstItem="rNh-HP-MR0" firstAttribute="trailing" secondItem="4fC-zl-yFr" secondAttribute="trailing" type="default" id="rh6-ov-d5l"/>
                             <constraint firstItem="rNh-HP-MR0" firstAttribute="top" secondItem="4fC-zl-yFr" secondAttribute="top" type="default" id="tzY-8P-8lL"/>
                             <constraint firstItem="rNh-HP-MR0" firstAttribute="bottom" secondItem="4fC-zl-yFr" secondAttribute="bottom" type="default" id="vst-df-y6v"/>
-                            <constraint firstItem="jNW-km-9Mc" firstAttribute="top" secondItem="4fC-zl-yFr" secondAttribute="top" constant="51" id="zc1-8w-d2R"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Do3-2h-hBd" id="g4e-WG-3a2"/>
                         <outlet property="gestureRecognizer" destination="XeU-dz-XSc" id="rRH-tr-4nW"/>
+                        <outlet property="puzzleLabel" destination="MaL-Gx-9Tf" id="6Jq-G5-b2P"/>
                         <outlet property="tableView" destination="jNW-km-9Mc" id="Hxh-Ts-NBU"/>
                     </connections>
                 </viewController>
@@ -209,6 +219,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="jumbly_logo_iPhone.png" width="320" height="112"/>
         <image name="wood.jpg" width="1000" height="1545"/>
     </resources>
     <classes>
@@ -226,6 +237,7 @@
                 <relationship kind="action" name="onShowSolution:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="gestureRecognizer" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="outlet" name="puzzleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>

@@ -17,5 +17,6 @@
 - (IBAction)onNewPuzzle:(id)sender;
 - (IBAction)onShowSolution:(id)sender;
 - (IBAction)onQuit:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *puzzleLabel;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *gestureRecognizer;
 @end

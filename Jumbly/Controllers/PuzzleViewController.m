@@ -57,6 +57,9 @@
         if(chain) {
             [self.activityIndicator removeFromSuperview];
             [self.activityIndicator stopAnimating];
+            
+            self.puzzleLabel.text = [NSString stringWithFormat:@"Puzzle: %@ ... %@",
+                                     chain.firstWord, chain.lastWord];
         }
         else {
             [self loadPuzzle];
