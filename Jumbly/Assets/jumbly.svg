@@ -3,9 +3,9 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px"
 	 height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
-<g id="Layer_2">
+<g id="Layer_2" display="none">
 	
-		<image overflow="visible" width="1000" height="1545" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEC0ALQAAD/4ge4SUNDX1BST0ZJTEUAAQEAAAeoYXBwbAIgAABtbnRyUkdC
+		<image display="inline" overflow="visible" width="1000" height="1545" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEC0ALQAAD/4ge4SUNDX1BST0ZJTEUAAQEAAAeoYXBwbAIgAABtbnRyUkdC
 IFhZWiAH2QACABkACwAaAAthY3NwQVBQTAAAAABhcHBsAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAA
 AADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtk
 ZXNjAAABCAAAAG9kc2NtAAABeAAABWxjcHJ0AAAG5AAAADh3dHB0AAAHHAAAABRyWFlaAAAHMAAA
@@ -7234,7 +7234,7 @@ Ocvg5/yfOfr/AN5y+LP0/wCOcfp/eH/H4z+7Ob4/vP5P7/8AmH7b/wCCf+DxnJ/1oz/leHH9jP/Z" tr
 	</image>
 </g>
 <g id="Layer_1">
-	<g>
+	<g opacity="0.8">
 		<path fill="#FFFFFF" d="M143.209,195.256c-0.393,2.319-1.524,4.331-3.39,6.033c-2.035,1.821-4.175,2.541-6.423,2.16
 			c-2.569-0.436-4.602-2.304-6.098-5.604c-0.267-0.596-0.345-1.215-0.236-1.857c0.145-0.856,0.59-1.534,1.335-2.031
 			c0.745-0.498,1.546-0.674,2.403-0.529c0.642,0.109,1.256,0.819,1.841,2.129c0.485,1.037,1.138,1.625,1.959,1.764
