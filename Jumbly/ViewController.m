@@ -27,7 +27,7 @@
     [[ChainQueue mainQueue] setJumble: jumble];
     // make sure we have 3 chains ready to go
     [[ChainQueue mainQueue] queueChains: 3];
-    rows = @[@"Puzzle", @"Contact"];
+    rows = @[@"Puzzle", @"Instructions", @"Contact"];
     self.tableView.backgroundView = nil;
 }
 
@@ -64,6 +64,10 @@
             break;
         }
         case 1: {
+            [self performSegueWithIdentifier:@"InstructionsSegue" sender:self];
+            break;
+        }
+        case 2: {
             [self initiateContact];
             break;
         }

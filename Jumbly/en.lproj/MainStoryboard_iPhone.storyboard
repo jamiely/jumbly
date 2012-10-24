@@ -52,7 +52,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lLN-un-tUF" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="user" id="1HX-PL-67k"/>
                             <constraint firstItem="l7m-N9-Y2W" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1I2-iE-xL6"/>
                             <constraint firstItem="lLN-un-tUF" firstAttribute="top" secondItem="l7m-N9-Y2W" secondAttribute="bottom" constant="31" type="user" id="1IU-Rq-6Of"/>
                             <constraint firstItem="l7m-N9-Y2W" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3" secondAttribute="top" constant="28" type="user" id="3Ma-yn-DsF"/>
@@ -63,17 +62,71 @@
                             <constraint firstItem="lLN-un-tUF" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="ZeA-Gs-t7b"/>
                             <constraint firstAttribute="trailing" secondItem="l7m-N9-Y2W" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dPx-c3-zB5"/>
                             <constraint firstItem="rJP-Cs-Qhi" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="eAJ-97-z1p"/>
-                            <constraint firstItem="lLN-un-tUF" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="user" id="hv1-Xv-0cg"/>
                             <constraint firstItem="lLN-un-tUF" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="vzH-62-Qol"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Am8-FH-6wP"/>
                     <connections>
                         <outlet property="tableView" destination="lLN-un-tUF" id="B0o-r8-Bu0"/>
                         <segue destination="DQf-Kc-Rgr" kind="modal" identifier="PuzzleSegue" id="4CC-B5-drX"/>
+                        <segue destination="U7D-87-u6s" kind="modal" identifier="InstructionsSegue" modalTransitionStyle="coverVertical" id="BY5-2P-cRr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="742" y="136"/>
+        </scene>
+        <!--Instructions View Controller-->
+        <scene sceneID="RZ2-A9-ny7">
+            <objects>
+                <viewController id="U7D-87-u6s" customClass="InstructionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cUk-ba-lpE">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="iF4-Gg-I2O"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Instructions" lineBreakMode="tailTruncation" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="297" translatesAutoresizingMaskIntoConstraints="NO" id="6Qx-kB-KJ5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="315" id="ABz-JL-iyw"/>
+                                    <constraint firstAttribute="width" constant="297" type="user" id="cls-ln-yIW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAf-Co-1Ef">
+                                <items>
+                                    <navigationItem title="Instructions" id="w7h-We-BPC">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Xiv-No-iON">
+                                            <connections>
+                                                <action selector="onDone:" destination="U7D-87-u6s" id="9gT-Rf-rvP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iF4-Gg-I2O" firstAttribute="leading" secondItem="cUk-ba-lpE" secondAttribute="leading" type="default" id="04M-hm-Xsn"/>
+                            <constraint firstItem="mAf-Co-1Ef" firstAttribute="trailing" secondItem="cUk-ba-lpE" secondAttribute="trailing" type="default" id="2HY-DN-Nso"/>
+                            <constraint firstItem="mAf-Co-1Ef" firstAttribute="top" secondItem="cUk-ba-lpE" secondAttribute="top" type="user" id="DdZ-gI-Pef"/>
+                            <constraint firstItem="iF4-Gg-I2O" firstAttribute="bottom" secondItem="cUk-ba-lpE" secondAttribute="bottom" type="default" id="L2Q-d5-LNv"/>
+                            <constraint firstItem="iF4-Gg-I2O" firstAttribute="top" secondItem="cUk-ba-lpE" secondAttribute="top" type="default" id="adY-8s-KeN"/>
+                            <constraint firstItem="6Qx-kB-KJ5" firstAttribute="top" secondItem="cUk-ba-lpE" secondAttribute="top" priority="482" constant="66" type="user" id="eZv-iV-yCq"/>
+                            <constraint firstItem="6Qx-kB-KJ5" firstAttribute="top" secondItem="mAf-Co-1Ef" secondAttribute="bottom" constant="22" type="user" id="fab-ds-RB1"/>
+                            <constraint firstItem="mAf-Co-1Ef" firstAttribute="leading" secondItem="cUk-ba-lpE" secondAttribute="leading" type="default" id="hI7-Vu-2lY"/>
+                            <constraint firstItem="mAf-Co-1Ef" firstAttribute="trailing" secondItem="iF4-Gg-I2O" secondAttribute="trailing" type="default" id="m9b-eh-PC5"/>
+                            <constraint firstItem="6Qx-kB-KJ5" firstAttribute="centerX" secondItem="mAf-Co-1Ef" secondAttribute="centerX" type="default" id="uzg-Ac-crT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="instructionsLabel" destination="6Qx-kB-KJ5" id="Mlw-q3-xV9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p7T-fU-fFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="216" y="875"/>
         </scene>
         <!--Puzzle View Controller-->
         <scene sceneID="cHM-0U-BFZ">
@@ -208,7 +261,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="836" y="136"/>
+            <point key="canvasLocation" x="1362" y="136"/>
         </scene>
     </scenes>
     <resources>
@@ -218,6 +271,13 @@
     <classes>
         <class className="EntryTableCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EntryTableCell.h"/>
+        </class>
+        <class className="InstructionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InstructionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onDone:"/>
+                <relationship kind="outlet" name="instructionsLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

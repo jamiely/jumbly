@@ -14,7 +14,7 @@
 
 @interface PuzzleViewController () {
     Chain *chain;
-    NSArray *guesses;
+    NSMutableArray *guesses;
     UIImage *defineImage;
     BOOL requiresReset;
 }
@@ -37,6 +37,7 @@
     self.activityIndicator.color = [UIColor whiteColor];
     
     requiresReset = NO;
+    [self.tableView setEditing:YES animated:YES];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -82,7 +83,7 @@
             guess.word = @"?";
             [_guesses addObject: guess];
         }
-        guesses = [NSArray arrayWithArray:_guesses];
+        guesses = [NSMutableArray arrayWithArray:_guesses];
     }
     // @todo, it's possible for this to be blank
     // @todo, add an activity indicator
@@ -90,6 +91,23 @@
 }
 
 #pragma mark - UITable delegate/datasource functions
+
+-(UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleNone;
+}
+
+- (BOOL) tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self isGuessRow: indexPath];
+}
+
+- (void) tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    NSInteger sourceRow = sourceIndexPath.row - 1;
+    NSInteger destRow = destinationIndexPath.row - 1;
+    id object = [guesses objectAtIndex:sourceRow];
+    
+    [guesses removeObjectAtIndex:sourceRow];
+    [guesses insertObject:object atIndex:destRow];
+}
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -228,6 +246,7 @@
     return YES;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self resignFirstResponder];
     [self evaluateTextFieldGuess: textField];
 }
 

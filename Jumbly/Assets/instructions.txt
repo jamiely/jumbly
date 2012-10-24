@@ -1,0 +1,4 @@
+Starting with the first word, change a single letter in each word to produce a new, valid word. Fill in the spaces provided until you reach the last word.
+
+Valid words are those that are available in your phone's dictionary.
+

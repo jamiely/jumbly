@@ -71,10 +71,63 @@
                     <connections>
                         <outlet property="tableView" destination="xgY-ul-4cy" id="5kA-8H-qI5"/>
                         <segue destination="Q8U-iy-6DJ" kind="modal" identifier="PuzzleSegue" id="K9u-rY-7K6"/>
+                        <segue destination="Ter-sA-eSq" kind="modal" identifier="InstructionsSegue" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="Qhr-SV-JVp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Instructions View Controller-->
+        <scene sceneID="xcu-yd-qnK">
+            <objects>
+                <viewController id="Ter-sA-eSq" customClass="InstructionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iKY-k4-RpY">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Bfw-AT-edW"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tua-DM-ebJ">
+                                <items>
+                                    <navigationItem title="Instructions" id="KbD-Pi-a7f">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="7dM-Uf-Glt">
+                                            <connections>
+                                                <action selector="onDone:" destination="Ter-sA-eSq" id="Lel-kd-Vvz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="500" translatesAutoresizingMaskIntoConstraints="NO" id="IXC-wv-t8l">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="532" id="Qq0-VQ-d4E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bfw-AT-edW" firstAttribute="top" secondItem="iKY-k4-RpY" secondAttribute="top" type="default" id="6cT-sy-NeW"/>
+                            <constraint firstItem="IXC-wv-t8l" firstAttribute="leading" secondItem="iKY-k4-RpY" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7sT-K9-jnu"/>
+                            <constraint firstAttribute="trailing" secondItem="IXC-wv-t8l" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ETv-YI-QWC"/>
+                            <constraint firstItem="IXC-wv-t8l" firstAttribute="top" secondItem="Tua-DM-ebJ" secondAttribute="bottom" constant="24" type="user" id="Eq0-fh-HO2"/>
+                            <constraint firstItem="Tua-DM-ebJ" firstAttribute="leading" secondItem="iKY-k4-RpY" secondAttribute="leading" type="default" id="LKV-Np-6Qf"/>
+                            <constraint firstItem="Tua-DM-ebJ" firstAttribute="top" secondItem="iKY-k4-RpY" secondAttribute="top" type="user" id="RS9-wJ-eN2"/>
+                            <constraint firstItem="Tua-DM-ebJ" firstAttribute="trailing" secondItem="iKY-k4-RpY" secondAttribute="trailing" type="default" id="RdS-Zl-P8l"/>
+                            <constraint firstItem="Bfw-AT-edW" firstAttribute="bottom" secondItem="iKY-k4-RpY" secondAttribute="bottom" type="default" id="W9t-wQ-gJt"/>
+                            <constraint firstItem="Bfw-AT-edW" firstAttribute="leading" secondItem="iKY-k4-RpY" secondAttribute="leading" type="default" id="fGi-i4-DYc"/>
+                            <constraint firstItem="Bfw-AT-edW" firstAttribute="trailing" secondItem="iKY-k4-RpY" secondAttribute="trailing" type="default" id="fJm-eX-h0l"/>
+                            <constraint firstAttribute="bottom" secondItem="IXC-wv-t8l" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="s3g-Nl-i65"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="instructionsLabel" destination="IXC-wv-t8l" id="FZS-hv-EH7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7up-T2-QKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="974"/>
         </scene>
         <!--Puzzle View Controller-->
         <scene sceneID="2Kx-mp-9qc">
@@ -222,6 +275,13 @@
     <classes>
         <class className="EntryTableCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EntryTableCell.h"/>
+        </class>
+        <class className="InstructionsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InstructionsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onDone:"/>
+                <relationship kind="outlet" name="instructionsLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

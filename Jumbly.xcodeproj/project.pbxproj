@@ -11,6 +11,8 @@
 		6D1F3F1516339F1100409872 /* Guess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F3F1416339F1100409872 /* Guess.m */; };
 		6D1F3F1716342EF000409872 /* dictionary-cache.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F3F1616342EF000409872 /* dictionary-cache.txt */; };
 		6D3CE4F316376563003C5D81 /* ChainQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3CE4F216376563003C5D81 /* ChainQueue.m */; };
+		6D3CE4F7163771F2003C5D81 /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3CE4F6163771F2003C5D81 /* InstructionsViewController.m */; };
+		6D3CE4F916377249003C5D81 /* instructions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D3CE4F816377249003C5D81 /* instructions.txt */; };
 		6D571BD91634536B008CFA25 /* define.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D571BD81634536B008CFA25 /* define.png */; };
 		6D631E5F163340700056F10E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D631E5E163340700056F10E /* UIKit.framework */; };
 		6D631E61163340700056F10E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D631E60163340700056F10E /* Foundation.framework */; };
@@ -58,6 +60,9 @@
 		6D1F3F1616342EF000409872 /* dictionary-cache.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "dictionary-cache.txt"; path = "Assets/dictionary-cache.txt"; sourceTree = "<group>"; };
 		6D3CE4F116376563003C5D81 /* ChainQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChainQueue.h; path = Models/ChainQueue.h; sourceTree = "<group>"; };
 		6D3CE4F216376563003C5D81 /* ChainQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChainQueue.m; path = Models/ChainQueue.m; sourceTree = "<group>"; };
+		6D3CE4F5163771F2003C5D81 /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructionsViewController.h; path = Controllers/InstructionsViewController.h; sourceTree = "<group>"; };
+		6D3CE4F6163771F2003C5D81 /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstructionsViewController.m; path = Controllers/InstructionsViewController.m; sourceTree = "<group>"; };
+		6D3CE4F816377249003C5D81 /* instructions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = instructions.txt; path = Assets/instructions.txt; sourceTree = "<group>"; };
 		6D571BD81634536B008CFA25 /* define.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = define.png; path = Assets/define.png; sourceTree = "<group>"; };
 		6D631E5A163340700056F10E /* Jumbly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jumbly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D631E5E163340700056F10E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -212,6 +217,7 @@
 				6DD3A5A91634ABFB002ACE4A /* wood.jpg */,
 				6D571BD81634536B008CFA25 /* define.png */,
 				6D1F3F1616342EF000409872 /* dictionary-cache.txt */,
+				6D3CE4F816377249003C5D81 /* instructions.txt */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -225,6 +231,8 @@
 				6D631EA816336B260056F10E /* PuzzleViewController.m */,
 				6D1F3F0F16339DE400409872 /* EntryTableCellViewController.h */,
 				6D1F3F1016339DE400409872 /* EntryTableCellViewController.m */,
+				6D3CE4F5163771F2003C5D81 /* InstructionsViewController.h */,
+				6D3CE4F6163771F2003C5D81 /* InstructionsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -344,6 +352,7 @@
 				6DD3A5AA1634ABFB002ACE4A /* wood.jpg in Resources */,
 				6DD3A5AF1634CABF002ACE4A /* jumbly_logo_iPhone.png in Resources */,
 				6DD3A5B01634CABF002ACE4A /* jumbly_logo_iPhone@2x.png in Resources */,
+				6D3CE4F916377249003C5D81 /* instructions.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +398,7 @@
 				6D1F3F1516339F1100409872 /* Guess.m in Sources */,
 				6DD3A5B41634D81B002ACE4A /* NSArray+Shuffle.m in Sources */,
 				6D3CE4F316376563003C5D81 /* ChainQueue.m in Sources */,
+				6D3CE4F7163771F2003C5D81 /* InstructionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
