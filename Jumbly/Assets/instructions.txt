@@ -2,3 +2,11 @@ Starting with the first word, change a single letter in each word to produce a n
 
 Valid words are those that are available in your phone's dictionary.
 
+You can start at any of the blank spaces. Sometimes it's easier to start at the bottom.
+
+[EXAMPLE GOES HERE]
+
+You can use the icons on the right of each word to reorder them. Hitting the info icon to the left of each word will show the dictionary definition of the word.
+
+Press enter when editing a word to continue.
+

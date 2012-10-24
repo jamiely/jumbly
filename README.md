@@ -5,9 +5,9 @@ https://github.com/jamiely/Word-Jumble.
 
 # Todo
 
-* Allow players to rearrange cells
 * Do not allow players to repeat words
-* Randomize generation of words
+* Show differences between words
+* Visually show words that are invalid
 
 # Media
 
