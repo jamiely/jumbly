@@ -18,4 +18,5 @@
 - (NSArray*) getWords: (NSRegularExpression*) regex;
 - (NSString*) drawWord;
 - (BOOL) word: (NSString*) word isNeighborOf: (NSString*) neighbor;
+
 @end

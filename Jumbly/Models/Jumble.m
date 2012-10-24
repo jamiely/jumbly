@@ -84,6 +84,7 @@
         if(nextChain.count >= length-1) {
             chain = nextChain;
             [nextChain addWord: word];
+            break;
         }
     }
     

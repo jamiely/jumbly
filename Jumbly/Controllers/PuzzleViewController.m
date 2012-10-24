@@ -9,6 +9,7 @@
 #import "PuzzleViewController.h"
 #import "EntryTableCell.h"
 #import "Guess.h"
+#import "ChainQueue.h"
 #import <objc/runtime.h>
 
 @interface PuzzleViewController () {
@@ -71,9 +72,7 @@
 }
 
 - (void) loadChain {
-    // get a new puzzle
-    NSString *initialWord = [jumble drawWord];
-    chain = [jumble chainWithWord: initialWord andLength: 5];
+    chain = [[ChainQueue mainQueue] nextChain];
     
     if(chain) {
         NSInteger count = chain.count;

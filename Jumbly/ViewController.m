@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Jumble.h"
 #import "PuzzleViewController.h"
+#import "ChainQueue.h"
 
 @interface ViewController () {
     Jumble *jumble;
@@ -23,6 +24,9 @@
 {
     [super viewDidLoad];
 	jumble = [[Jumble alloc] init];
+    [[ChainQueue mainQueue] setJumble: jumble];
+    // make sure we have 3 chains ready to go
+    [[ChainQueue mainQueue] queueChains: 3];
     rows = @[@"Puzzle", @"Contact"];
     self.tableView.backgroundView = nil;
 }

@@ -10,6 +10,7 @@
 		6D1F3F1116339DE400409872 /* EntryTableCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F3F1016339DE400409872 /* EntryTableCellViewController.m */; };
 		6D1F3F1516339F1100409872 /* Guess.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F3F1416339F1100409872 /* Guess.m */; };
 		6D1F3F1716342EF000409872 /* dictionary-cache.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D1F3F1616342EF000409872 /* dictionary-cache.txt */; };
+		6D3CE4F316376563003C5D81 /* ChainQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3CE4F216376563003C5D81 /* ChainQueue.m */; };
 		6D571BD91634536B008CFA25 /* define.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D571BD81634536B008CFA25 /* define.png */; };
 		6D631E5F163340700056F10E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D631E5E163340700056F10E /* UIKit.framework */; };
 		6D631E61163340700056F10E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D631E60163340700056F10E /* Foundation.framework */; };
@@ -55,6 +56,8 @@
 		6D1F3F1316339F1100409872 /* Guess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Guess.h; path = Models/Guess.h; sourceTree = "<group>"; };
 		6D1F3F1416339F1100409872 /* Guess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Guess.m; path = Models/Guess.m; sourceTree = "<group>"; };
 		6D1F3F1616342EF000409872 /* dictionary-cache.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "dictionary-cache.txt"; path = "Assets/dictionary-cache.txt"; sourceTree = "<group>"; };
+		6D3CE4F116376563003C5D81 /* ChainQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChainQueue.h; path = Models/ChainQueue.h; sourceTree = "<group>"; };
+		6D3CE4F216376563003C5D81 /* ChainQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChainQueue.m; path = Models/ChainQueue.m; sourceTree = "<group>"; };
 		6D571BD81634536B008CFA25 /* define.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = define.png; path = Assets/define.png; sourceTree = "<group>"; };
 		6D631E5A163340700056F10E /* Jumbly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jumbly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D631E5E163340700056F10E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -235,6 +238,8 @@
 				6D631EA5163341980056F10E /* Chain.m */,
 				6D1F3F1316339F1100409872 /* Guess.h */,
 				6D1F3F1416339F1100409872 /* Guess.m */,
+				6D3CE4F116376563003C5D81 /* ChainQueue.h */,
+				6D3CE4F216376563003C5D81 /* ChainQueue.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				6D1F3F1116339DE400409872 /* EntryTableCellViewController.m in Sources */,
 				6D1F3F1516339F1100409872 /* Guess.m in Sources */,
 				6DD3A5B41634D81B002ACE4A /* NSArray+Shuffle.m in Sources */,
+				6D3CE4F316376563003C5D81 /* ChainQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
