@@ -8,7 +8,7 @@
 
 #import "ChainQueue.h"
 
-const NSUInteger CHAINQUEUE_CHAIN_LENGTH = 4;
+const NSUInteger CHAINQUEUE_CHAIN_LENGTH = 6;
 
 @interface ChainQueue(){
     NSMutableArray *chains;

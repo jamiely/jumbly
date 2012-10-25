@@ -68,7 +68,8 @@
             self.puzzleLabel.text = [NSString stringWithFormat:@"Puzzle: %@ ... %@",
                                      chain.firstWord, chain.lastWord];
             
-            self.debugTextView.text = [chain.words componentsJoinedByString:@","];
+            self.debugTextView.text = [NSString stringWithFormat:@"Debug: %@",
+                                       [chain.words componentsJoinedByString:@","]];
         }
         else {
             [self loadPuzzle];
@@ -113,6 +114,10 @@
     [guesses insertObject:object atIndex:destRow];
     
     [self.tableView reloadData];
+}
+
+- (NSIndexPath*) guessIndextoIndexPath: (NSUInteger) row {
+    return [NSIndexPath indexPathForItem: row+1 inSection:0];
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
@@ -288,8 +293,7 @@
         guess.word = textField.text;
     }
     NSUInteger guessIndex = [guesses indexOfObject: guess];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem: guessIndex + 1 inSection: 0];
-    [self.tableView reloadRowsAtIndexPaths: @[indexPath]
+    [self.tableView reloadRowsAtIndexPaths: @[[self guessIndextoIndexPath: guessIndex]]
                           withRowAnimation: UITableViewRowAnimationNone];
     [self evaluateWin];
 }
@@ -331,7 +335,6 @@
 }
 
 - (void)touchOut:(id)sender {
-    int x = 1;
     if(activeTextField) {
         [activeTextField resignFirstResponder];
     }

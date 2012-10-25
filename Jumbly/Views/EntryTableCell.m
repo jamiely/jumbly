@@ -61,6 +61,7 @@
     textField = [[UITextField alloc] initWithFrame: frame];
     
     textField.textAlignment = NSTextAlignmentCenter;
+    textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
     textField.font = boldFont;
     textField.textColor = [UIColor whiteColor];
