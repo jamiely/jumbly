@@ -1,10 +1,15 @@
-Starting with the first word, change a single letter in each word to produce a new, valid word. Fill in the spaces provided until you reach the last word.
+Starting with the first word, change a single letter in each word to produce a new, valid word. Fill in the spaces provided until you reach the last word. If the word you enter is more than 1 letter different than the words above and below it, your word will be italicized.
 
-Valid words are those that are available in your phone's dictionary.
+Valid words are those that are available in your phone's dictionary. Invalid words will appear red.
 
 You can start at any of the blank spaces. Sometimes it's easier to start at the bottom.
 
-[EXAMPLE GOES HERE]
+Example:
+
+buggy
+fuggy
+puggy
+pudgy
 
 You can use the icons on the right of each word to reorder them. Hitting the info icon to the left of each word will show the dictionary definition of the word.
 

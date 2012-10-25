@@ -27,7 +27,13 @@
         self.instructionsLabel.text = [NSString stringWithContentsOfFile: filePath
                                                                 encoding: NSUTF8StringEncoding
                                                                    error: &error];
-        [self.instructionsLabel sizeToFit];
+        self.instructionsLabel.numberOfLines = 100;
+        CGRect labelFrame = self.instructionsLabel.frame;
+        labelFrame.size.height = 1000.f;
+        self.instructionsLabel.frame = labelFrame;
+        //[self.instructionsLabel sizeToFit];
+        CGSize size = self.instructionsLabel.frame.size;
+        self.scrollView.contentSize = size;
         if(error) {
             NSLog(@"Error loading instructions: %@", error);
         }

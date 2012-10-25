@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface InstructionsViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UILabel *instructionsLabel;
 - (IBAction)onDone:(id)sender;
 
