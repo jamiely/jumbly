@@ -12,4 +12,12 @@
 
 @synthesize word;
 
+- (id) init {
+    self = [super init];
+    if(self) {
+        self.hint = NO;
+    }
+    return self;
+}
+
 @end

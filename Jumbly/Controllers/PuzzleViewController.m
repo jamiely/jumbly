@@ -16,6 +16,7 @@
     Chain *chain;
     NSMutableArray *guesses;
     UIImage *defineImage;
+    UITextField *activeTextField;
     BOOL requiresReset;
 }
 @end
@@ -28,8 +29,9 @@
 {
     [super viewDidLoad];
     defineImage = [UIImage imageNamed:@"define.png"];
-    [self.gestureRecognizer addTarget:self action:@selector(onDefine:)];
+    [self.gestureRecognizer addTarget:self action:@selector(touchOut:)];
     self.gestureRecognizer.delegate = self;
+    [self.view addGestureRecognizer: self.gestureRecognizer];
     
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.backgroundView = nil;
@@ -65,6 +67,8 @@
             
             self.puzzleLabel.text = [NSString stringWithFormat:@"Puzzle: %@ ... %@",
                                      chain.firstWord, chain.lastWord];
+            
+            self.debugTextView.text = [chain.words componentsJoinedByString:@","];
         }
         else {
             [self loadPuzzle];
@@ -97,7 +101,7 @@
 }
 
 - (BOOL) tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self isGuessRow: indexPath];
+    return [self isGuessRow: indexPath] && ![[guesses objectAtIndex: indexPath.row - 1] hint];
 }
 
 - (void) tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
@@ -107,6 +111,8 @@
     
     [guesses removeObjectAtIndex:sourceRow];
     [guesses insertObject:object atIndex:destRow];
+    
+    [self.tableView reloadData];
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
@@ -132,6 +138,17 @@
             [NSIndexPath indexPathForRow: ip.row - 1 inSection: ip.section]];
 }
 
+- (NSString*) wordAfterIndexPath: (NSIndexPath*) ip {
+    return [self wordAtIndexPath:
+            [NSIndexPath indexPathForRow: ip.row + 1 inSection: ip.section]];
+}
+
+#pragma mark - Table Delegate functions
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [activeTextField resignFirstResponder];
+}
+
 - (UITableViewCell*) tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EntryTableCell *cell = cell = [tableView dequeueReusableCellWithIdentifier:@"EntryTableCell"];
@@ -152,10 +169,20 @@
             cell.textField.delegate = self;
             
             NSString *previousWord = [self wordBeforeIndexPath: indexPath];
+            NSString *nextWord = [self wordAfterIndexPath: indexPath];
             
-            cell.validWord = [self wordIsDefined: guess.word] &&
-                [jumble word: guess.word isNeighborOf: previousWord];
-            
+            if([guess.word isEqualToString: @"?"]) {
+                cell.validWord = YES;
+                cell.validNeighbor = YES;
+            }
+            else {
+                cell.validWord = [self wordIsDefined: guess.word];
+                cell.validNeighbor = (
+                    [previousWord isEqualToString: @"?"] ||
+                        [jumble word: guess.word isNeighborOf: previousWord]) &&
+                    ([nextWord isEqualToString: @"?"] ||
+                        [jumble word: guess.word isNeighborOf: nextWord]);
+            }
             cell.word = guess.word;
             cell.infoButton.hidden = YES;
             if([self wordIsDefined: guess.word]) {
@@ -163,7 +190,7 @@
                 [cell.infoButton addTarget:self action:@selector(onDefine:) forControlEvents:UIControlEventTouchUpInside];
                 cell.infoButton.hidden = NO;
             }
-            cell.locked = NO;
+            cell.locked = guess.hint;
             [self bindTextField: cell.textField toGuess: guess];
         }
     }
@@ -198,9 +225,7 @@
     if([self wordIsDefined: word]) {
         UIReferenceLibraryViewController * controller =
         [[UIReferenceLibraryViewController alloc] initWithTerm: word];
-        [self presentViewController: controller animated: YES completion:^{
-            // ?
-        }];
+        [self presentViewController: controller animated: YES completion:^{}];
     }
 }
 
@@ -216,6 +241,7 @@
     for(NSInteger i = 0, c = guesses.count; i < c; i ++) {
         Guess *guess = [guesses objectAtIndex: i];
         guess.word = [chain wordAtIndex: i+1];
+        guess.hint = YES;
     }
     [self.tableView reloadData];
 }
@@ -233,10 +259,13 @@
     [self showDefinition: word];
 }
 
+#pragma mark - Text Field Delegate functions
+
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if([textField.text isEqualToString: @"?"]) {
         textField.text = @"";
     }
+    activeTextField = textField;
     return YES;
 }
 
@@ -246,7 +275,7 @@
     return YES;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    [self resignFirstResponder];
+    [textField resignFirstResponder];
     [self evaluateTextFieldGuess: textField];
 }
 
@@ -258,7 +287,10 @@
     else {
         guess.word = textField.text;
     }
-    [self.tableView reloadData];
+    NSUInteger guessIndex = [guesses indexOfObject: guess];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem: guessIndex + 1 inSection: 0];
+    [self.tableView reloadRowsAtIndexPaths: @[indexPath]
+                          withRowAnimation: UITableViewRowAnimationNone];
     [self evaluateWin];
 }
 
@@ -296,6 +328,13 @@
         lastWord = word;
     }
     return won;
+}
+
+- (void)touchOut:(id)sender {
+    int x = 1;
+    if(activeTextField) {
+        [activeTextField resignFirstResponder];
+    }
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {

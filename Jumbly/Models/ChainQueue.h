@@ -10,6 +10,8 @@
 #import "Jumble.h"
 #import "Chain.h"
 
+const NSUInteger CHAINQUEUE_CHAIN_LENGTH;
+
 @interface ChainQueue : NSObject
 - (void) queueChains: (NSUInteger) chainCount;
 - (Chain*) nextChain;

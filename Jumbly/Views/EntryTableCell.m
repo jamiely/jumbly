@@ -8,6 +8,13 @@
 
 #import "EntryTableCell.h"
 
+@interface EntryTableCell(){
+    UIFont *boldFont;
+    UIFont *italicFont;
+}
+
+@end
+
 @implementation EntryTableCell
 
 @synthesize textField;
@@ -16,6 +23,7 @@
 @synthesize textLabel;
 @synthesize locked;
 @synthesize word;
+@synthesize validNeighbor;
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder: aDecoder];
@@ -42,6 +50,9 @@
 }
 
 - (void) initialize: (CGRect) frame {
+    boldFont = [UIFont boldSystemFontOfSize: [UIFont labelFontSize]];
+    italicFont = [UIFont italicSystemFontOfSize: [UIFont labelFontSize]];
+    
     NSInteger padding = 10;
     NSInteger horizontalPadding = 100;
     frame.origin = CGPointMake(horizontalPadding, padding);
@@ -51,7 +62,7 @@
     
     textField.textAlignment = NSTextAlignmentCenter;
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
-    textField.font = [UIFont boldSystemFontOfSize: [UIFont labelFontSize]];
+    textField.font = boldFont;
     textField.textColor = [UIColor whiteColor];
     [self addSubview: textField];
     
@@ -79,6 +90,13 @@
     validWord = aValidWord;
     self.accessoryType = validWord ? UITableViewCellAccessoryCheckmark :
         UITableViewCellAccessoryNone;
+    textField.textColor = validWord ?
+        [UIColor whiteColor] : [UIColor redColor];
+}
+
+- (void) setValidNeighbor:(BOOL)aValidNeighbor {
+    validNeighbor = aValidNeighbor;
+    textField.font = validNeighbor ? boldFont : italicFont;
 }
 
 - (void) setLocked: (BOOL) value {

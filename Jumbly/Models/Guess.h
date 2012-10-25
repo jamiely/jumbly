@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Guess : NSObject
-@property (nonatomic, strong) NSString *word;
+@property (nonatomic, copy) NSString *word;
+@property (nonatomic, assign) BOOL hint;
 @end

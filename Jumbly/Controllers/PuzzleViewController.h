@@ -13,6 +13,7 @@
     UITableViewDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate,
     UIAlertViewDelegate>
 @property (nonatomic, strong) Jumble *jumble;
+@property (strong, nonatomic) IBOutlet UITextView *debugTextView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)onNewPuzzle:(id)sender;

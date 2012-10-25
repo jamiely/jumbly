@@ -213,19 +213,48 @@
                                     <action selector="onQuit:" destination="Q8U-iy-6DJ" eventType="touchUpInside" id="rC1-dd-fyh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mE-bV-fic">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="Wme-az-Y5N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Instructions">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ter-sA-eSq" kind="modal" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="eAu-Df-OLv"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZq-CY-35e">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="qv1-jh-pIF"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TpV-2F-E8s" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vqT-wx-Wdl" secondAttribute="leading" constant="20" type="user" id="1LR-2m-OYX"/>
                             <constraint firstItem="KVm-ZQ-ecp" firstAttribute="width" secondItem="Lai-Cn-JDY" secondAttribute="width" type="user" id="1vG-jZ-0Ko"/>
                             <constraint firstItem="Lai-Cn-JDY" firstAttribute="baseline" secondItem="uGj-a0-ERE" secondAttribute="baseline" type="user" id="405-TC-CJN"/>
+                            <constraint firstItem="CZq-CY-35e" firstAttribute="trailing" secondItem="WYV-uZ-jlF" secondAttribute="trailing" type="default" id="BEy-gE-hKG"/>
                             <constraint firstItem="jv4-sp-ZwX" firstAttribute="trailing" secondItem="vqT-wx-Wdl" secondAttribute="trailing" type="default" id="Djz-1F-gk4"/>
                             <constraint firstItem="jv4-sp-ZwX" firstAttribute="bottom" secondItem="vqT-wx-Wdl" secondAttribute="bottom" type="default" id="LwQ-zJ-YJT"/>
+                            <constraint firstItem="CZq-CY-35e" firstAttribute="leading" secondItem="vqT-wx-Wdl" secondAttribute="leading" type="default" id="MPb-Em-A78"/>
                             <constraint firstItem="WYV-uZ-jlF" firstAttribute="top" secondItem="TpV-2F-E8s" secondAttribute="bottom" constant="8" type="user" id="MY9-Re-Hab"/>
                             <constraint firstItem="Lai-Cn-JDY" firstAttribute="centerX" secondItem="WYV-uZ-jlF" secondAttribute="centerX" type="user" id="O9U-GD-ejc"/>
                             <constraint firstAttribute="bottom" secondItem="KVm-ZQ-ecp" secondAttribute="bottom" constant="33" type="user" id="Plv-u7-lJv"/>
+                            <constraint firstItem="3mE-bV-fic" firstAttribute="top" secondItem="TpV-2F-E8s" secondAttribute="top" type="default" id="Qjt-35-jyB"/>
                             <constraint firstItem="Lai-Cn-JDY" firstAttribute="top" secondItem="WYV-uZ-jlF" secondAttribute="bottom" constant="37" type="user" id="SK5-3h-dU2"/>
                             <constraint firstItem="KVm-ZQ-ecp" firstAttribute="baseline" secondItem="Lai-Cn-JDY" secondAttribute="baseline" type="user" id="SzQ-wc-uyw"/>
+                            <constraint firstItem="CZq-CY-35e" firstAttribute="top" secondItem="vqT-wx-Wdl" secondAttribute="top" constant="893" id="WJb-Ko-KuI"/>
                             <constraint firstItem="jv4-sp-ZwX" firstAttribute="top" secondItem="vqT-wx-Wdl" secondAttribute="top" type="default" id="X0r-lF-14v"/>
                             <constraint firstItem="KVm-ZQ-ecp" firstAttribute="width" secondItem="uGj-a0-ERE" secondAttribute="width" type="user" id="XR9-d4-6Hn"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uGj-a0-ERE" secondAttribute="bottom" constant="33" type="user" id="YSY-Xp-M0u"/>
@@ -240,6 +269,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KVm-ZQ-ecp" secondAttribute="trailing" constant="71" type="user" id="lgW-0l-7Cc"/>
                             <constraint firstItem="WYV-uZ-jlF" firstAttribute="top" secondItem="vqT-wx-Wdl" secondAttribute="top" constant="77" type="user" id="lkw-lv-tQx"/>
                             <constraint firstItem="uGj-a0-ERE" firstAttribute="leading" secondItem="vqT-wx-Wdl" secondAttribute="leading" constant="84" type="user" id="m9z-04-EgN"/>
+                            <constraint firstAttribute="trailing" secondItem="3mE-bV-fic" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nzc-Mq-TKT"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TpV-2F-E8s" secondAttribute="trailing" constant="20" type="user" id="o1J-HZ-ClB"/>
                             <constraint firstItem="TpV-2F-E8s" firstAttribute="leading" secondItem="vqT-wx-Wdl" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qoM-ON-XJA"/>
                             <constraint firstAttribute="trailing" secondItem="KVm-ZQ-ecp" secondAttribute="trailing" constant="71" type="user" id="tUB-MU-7nT"/>
@@ -249,6 +279,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="YuZ-1G-zro" id="ukR-IU-22c"/>
+                        <outlet property="debugTextView" destination="CZq-CY-35e" id="nok-Wk-Dph"/>
                         <outlet property="gestureRecognizer" destination="hag-Sj-gDX" id="Iqf-R2-5gl"/>
                         <outlet property="puzzleLabel" destination="TpV-2F-E8s" id="d3b-15-uoT"/>
                         <outlet property="tableView" destination="WYV-uZ-jlF" id="Dyv-eX-HEt"/>
@@ -265,7 +296,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1165" y="-98"/>
+            <point key="canvasLocation" x="978" y="-159"/>
         </scene>
     </scenes>
     <resources>
@@ -293,6 +324,7 @@
                 <relationship kind="action" name="onQuit:"/>
                 <relationship kind="action" name="onShowSolution:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="debugTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="gestureRecognizer" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="puzzleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
@@ -310,4 +342,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="eAu-Df-OLv"/>
+    </inferredMetricsTieBreakers>
 </document>

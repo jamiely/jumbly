@@ -8,6 +8,8 @@
 
 #import "ChainQueue.h"
 
+const NSUInteger CHAINQUEUE_CHAIN_LENGTH = 4;
+
 @interface ChainQueue(){
     NSMutableArray *chains;
 }
@@ -30,7 +32,7 @@
     
     Jumble *jumb = jumble;
     dispatch_async(dispatch_get_main_queue(), ^{
-        Chain *chain = [jumb chainWithWord: [jumb drawWord] andLength: 6];
+        Chain *chain = [jumb chainWithWord: [jumb drawWord] andLength: CHAINQUEUE_CHAIN_LENGTH];
         if(chain) {
             [chains addObject: chain];
             [self queueChains: chainCount - 1];

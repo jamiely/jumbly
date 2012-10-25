@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSString* word;
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, assign) BOOL validWord;
+@property (nonatomic, assign) BOOL validNeighbor;
 @property (nonatomic, strong) UIButton *infoButton;
 @property (nonatomic, assign) BOOL locked;
 @end
