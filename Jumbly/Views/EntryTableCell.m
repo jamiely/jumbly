@@ -8,6 +8,9 @@
 
 #import "EntryTableCell.h"
 
+const NSInteger ENTRYTABLECELL_PADDING = 10;
+const NSInteger ENTRYTABLECELL_PADDING_HORIZONTAL = 100;
+
 @interface EntryTableCell(){
     UIFont *boldFont;
     UIFont *italicFont;
@@ -49,16 +52,21 @@
     return self;
 }
 
+- (CGRect) controlFrame: (CGRect) baseFrame {
+    CGRect frame = baseFrame;
+    frame.origin = CGPointMake(ENTRYTABLECELL_PADDING_HORIZONTAL, ENTRYTABLECELL_PADDING);
+    frame.size.height -= ENTRYTABLECELL_PADDING*2;
+    frame.size.width -= ENTRYTABLECELL_PADDING_HORIZONTAL*2;
+    
+    return frame;
+}
+
 - (void) initialize: (CGRect) frame {
     boldFont = [UIFont boldSystemFontOfSize: [UIFont labelFontSize]];
     italicFont = [UIFont italicSystemFontOfSize: [UIFont labelFontSize]];
     
-    NSInteger padding = 10;
-    NSInteger horizontalPadding = 100;
-    frame.origin = CGPointMake(horizontalPadding, padding);
-    frame.size.height -= padding*2;
-    frame.size.width -= horizontalPadding*2;
-    textField = [[UITextField alloc] initWithFrame: frame];
+    CGRect textFrame = [self controlFrame: frame];
+    textField = [[UITextField alloc] initWithFrame: textFrame];
     
     textField.textAlignment = NSTextAlignmentCenter;
     textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
@@ -67,7 +75,7 @@
     textField.textColor = [UIColor whiteColor];
     [self addSubview: textField];
     
-    textLabel = [[UILabel alloc] initWithFrame: frame];
+    textLabel = [[UILabel alloc] initWithFrame: textFrame];
     textLabel.textAlignment = NSTextAlignmentCenter;
     textLabel.font = [UIFont boldSystemFontOfSize: [UIFont labelFontSize]];
     textLabel.hidden = YES;
@@ -82,7 +90,8 @@
     
     infoButton = [UIButton buttonWithType: UIButtonTypeInfoLight];
     CGRect buttonFrame = infoButton.frame;
-    buttonFrame.origin = CGPointMake(padding, frame.size.height / 2.0f);
+    buttonFrame.origin = CGPointMake(ENTRYTABLECELL_PADDING,
+                                     textFrame.size.height / 2.0f);
     infoButton.frame = buttonFrame;
     [self.contentView addSubview: infoButton];
 }
@@ -104,13 +113,18 @@
     locked = value;
     textField.hidden = locked;
     textLabel.hidden = !locked;
-    //self.backgroundColor = locked ? [UIColor yellowColor] : [UIColor whiteColor];
 }
 
 - (void) setWord:(NSString *)aWord {
     word = aWord;
     textField.text = word;
     textLabel.text = word;
+}
+
+- (void)setNeedsLayout {
+    CGRect frame = [self controlFrame: self.frame];
+    textField.frame = frame;
+    textLabel.frame = frame;
 }
 
 @end

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+extern const NSInteger ENTRYTABLECELL_PADDING;
+extern const NSInteger ENTRYTABLECELL_PADDING_HORIZONTAL;
+
 @interface EntryTableCell : UITableViewCell
 @property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, copy) NSString* word;
