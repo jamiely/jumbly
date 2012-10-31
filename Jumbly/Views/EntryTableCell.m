@@ -121,10 +121,11 @@ const NSInteger ENTRYTABLECELL_PADDING_HORIZONTAL = 100;
     textLabel.text = word;
 }
 
-- (void)setNeedsLayout {
+- (void) layoutSubviews {
+    [super layoutSubviews];
+    
     CGRect frame = [self controlFrame: self.frame];
     textField.frame = frame;
     textLabel.frame = frame;
 }
-
 @end

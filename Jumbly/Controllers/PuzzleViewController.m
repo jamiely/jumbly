@@ -17,6 +17,8 @@
     NSMutableArray *guesses;
     UIImage *defineImage;
     UITextField *activeTextField;
+    UIPopoverController *popover;
+    UIReferenceLibraryViewController * dictionaryController;
     BOOL requiresReset;
 }
 @end
@@ -39,7 +41,7 @@
     self.activityIndicator.color = [UIColor whiteColor];
     
     requiresReset = NO;
-    [self.tableView setEditing:YES animated:YES];
+    [self.tableView setEditing:YES animated:NO];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -227,10 +229,24 @@
 }
 
 - (void) showDefinition: (NSString*) word {
+    [self showDefinition: word withRect: CGRectMake(10, 10, 10, 10)];
+}
+
+- (void) showDefinition: (NSString*) word withRect: (CGRect) wordRect {
     if([self wordIsDefined: word]) {
-        UIReferenceLibraryViewController * controller =
+        dictionaryController =
         [[UIReferenceLibraryViewController alloc] initWithTerm: word];
-        [self presentViewController: controller animated: YES completion:^{}];
+        
+        if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+            popover = [[UIPopoverController alloc] initWithContentViewController: dictionaryController];
+            [popover presentPopoverFromRect: wordRect inView: self.view
+                   permittedArrowDirections: UIPopoverArrowDirectionAny
+                                   animated: YES];
+        }
+        else {
+            [self presentViewController: dictionaryController
+                               animated: YES completion: nil];
+        }
     }
 }
 
@@ -261,7 +277,13 @@
     NSInteger row = [sender tag];
     NSString *word = [self wordAtIndexPath: [NSIndexPath indexPathForItem:row
                                                                 inSection:0]];
-    [self showDefinition: word];
+    CGRect wordRect = CGRectMake(0, 0, 30, 30);
+    UIView *aInfoButton = [sender superview];
+    UIView *aTableCell = [aInfoButton superview];
+
+    wordRect.origin = [self.view convertPoint: aInfoButton.frame.origin fromView:aTableCell];
+    
+    [self showDefinition: word withRect: wordRect];
 }
 
 #pragma mark - Text Field Delegate functions
