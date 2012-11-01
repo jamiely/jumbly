@@ -13,10 +13,6 @@
 		6D3CE4F316376563003C5D81 /* ChainQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3CE4F216376563003C5D81 /* ChainQueue.m */; };
 		6D3CE4F7163771F2003C5D81 /* InstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3CE4F6163771F2003C5D81 /* InstructionsViewController.m */; };
 		6D3CE4F916377249003C5D81 /* instructions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6D3CE4F816377249003C5D81 /* instructions.txt */; };
-		6D3CE4FB16377C69003C5D81 /* jumbly_icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D3CE4FA16377C69003C5D81 /* jumbly_icon_57.png */; };
-		6D3CE4FD16377C7A003C5D81 /* jumbly_icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D3CE4FC16377C7A003C5D81 /* jumbly_icon_114.png */; };
-		6D3CE4FF16377C84003C5D81 /* jumbly_icon_72.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D3CE4FE16377C84003C5D81 /* jumbly_icon_72.png */; };
-		6D3CE50116377C89003C5D81 /* jumbly_icon_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D3CE50016377C89003C5D81 /* jumbly_icon_144.png */; };
 		6D3CE50316377F90003C5D81 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6D3CE50216377F90003C5D81 /* README.md */; };
 		6D3CE50916378047003C5D81 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D3CE50816378047003C5D81 /* Default-Portrait~ipad.png */; };
 		6D3CE50B16378054003C5D81 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D3CE50A16378054003C5D81 /* Default-Portrait@2x~ipad.png */; };
@@ -63,6 +59,12 @@
 		6DF79AB316420D8C00E38EE5 /* icon-signout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79AAF16420D8C00E38EE5 /* icon-signout@2x.png */; };
 		6DF79AB616420F0800E38EE5 /* jumbly_pig.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79AB416420F0800E38EE5 /* jumbly_pig.png */; };
 		6DF79AB716420F0800E38EE5 /* jumbly_pig@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79AB516420F0800E38EE5 /* jumbly_pig@2x.png */; };
+		6DF79ABC164216F400E38EE5 /* jumbly_icon_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79AB8164216F300E38EE5 /* jumbly_icon_57.png */; };
+		6DF79ABD164216F400E38EE5 /* jumbly_icon_72.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79AB9164216F300E38EE5 /* jumbly_icon_72.png */; };
+		6DF79ABE164216F400E38EE5 /* jumbly_icon_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79ABA164216F400E38EE5 /* jumbly_icon_114.png */; };
+		6DF79ABF164216F400E38EE5 /* jumbly_icon_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79ABB164216F400E38EE5 /* jumbly_icon_144.png */; };
+		6DF79AC516421C0300E38EE5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79AC416421C0300E38EE5 /* Default@2x.png */; };
+		6DF79AC716421C0B00E38EE5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79AC616421C0B00E38EE5 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,15 +88,11 @@
 		6D3CE4F5163771F2003C5D81 /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstructionsViewController.h; path = Controllers/InstructionsViewController.h; sourceTree = "<group>"; };
 		6D3CE4F6163771F2003C5D81 /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InstructionsViewController.m; path = Controllers/InstructionsViewController.m; sourceTree = "<group>"; };
 		6D3CE4F816377249003C5D81 /* instructions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = instructions.txt; path = Assets/instructions.txt; sourceTree = "<group>"; };
-		6D3CE4FA16377C69003C5D81 /* jumbly_icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumbly_icon_57.png; sourceTree = "<group>"; };
-		6D3CE4FC16377C7A003C5D81 /* jumbly_icon_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumbly_icon_114.png; sourceTree = "<group>"; };
-		6D3CE4FE16377C84003C5D81 /* jumbly_icon_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumbly_icon_72.png; sourceTree = "<group>"; };
-		6D3CE50016377C89003C5D81 /* jumbly_icon_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jumbly_icon_144.png; sourceTree = "<group>"; };
 		6D3CE50216377F90003C5D81 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		6D3CE50816378047003C5D81 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		6D3CE50A16378054003C5D81 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
-		6D3CE50E16378197003C5D81 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
-		6D3CE510163781AA003C5D81 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		6D3CE50816378047003C5D81 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		6D3CE50A16378054003C5D81 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~ipad.png"; path = "../Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		6D3CE50E16378197003C5D81 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		6D3CE510163781AA003C5D81 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape@2x~ipad.png"; path = "../Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		6D571BD81634536B008CFA25 /* define.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = define.png; path = Assets/define.png; sourceTree = "<group>"; };
 		6D631E5A163340700056F10E /* Jumbly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jumbly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D631E5E163340700056F10E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -127,7 +125,7 @@
 		6D631EA816336B260056F10E /* PuzzleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PuzzleViewController.m; path = Controllers/PuzzleViewController.m; sourceTree = "<group>"; };
 		6D631EAA163398620056F10E /* EntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntryTableCell.h; path = Views/EntryTableCell.h; sourceTree = "<group>"; };
 		6D631EAB163398620056F10E /* EntryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntryTableCell.m; path = Views/EntryTableCell.m; sourceTree = "<group>"; };
-		6DA567A1163783C700A09E3A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		6DA567A1163783C700A09E3A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		6DD3A5A91634ABFB002ACE4A /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wood.jpg; path = Assets/wood.jpg; sourceTree = "<group>"; };
 		6DD3A5AB1634B1DD002ACE4A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		6DD3A5AD1634CABF002ACE4A /* jumbly_logo_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jumbly_logo_iPhone.png; path = Assets/jumbly_logo_iPhone.png; sourceTree = "<group>"; };
@@ -147,6 +145,12 @@
 		6DF79AAF16420D8C00E38EE5 /* icon-signout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-signout@2x.png"; path = "Assets/icon-signout@2x.png"; sourceTree = "<group>"; };
 		6DF79AB416420F0800E38EE5 /* jumbly_pig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jumbly_pig.png; path = Assets/jumbly_pig.png; sourceTree = "<group>"; };
 		6DF79AB516420F0800E38EE5 /* jumbly_pig@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jumbly_pig@2x.png"; path = "Assets/jumbly_pig@2x.png"; sourceTree = "<group>"; };
+		6DF79AB8164216F300E38EE5 /* jumbly_icon_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jumbly_icon_57.png; path = Assets/jumbly_icon_57.png; sourceTree = "<group>"; };
+		6DF79AB9164216F300E38EE5 /* jumbly_icon_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jumbly_icon_72.png; path = Assets/jumbly_icon_72.png; sourceTree = "<group>"; };
+		6DF79ABA164216F400E38EE5 /* jumbly_icon_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jumbly_icon_114.png; path = Assets/jumbly_icon_114.png; sourceTree = "<group>"; };
+		6DF79ABB164216F400E38EE5 /* jumbly_icon_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jumbly_icon_144.png; path = Assets/jumbly_icon_144.png; sourceTree = "<group>"; };
+		6DF79AC416421C0300E38EE5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		6DF79AC616421C0B00E38EE5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,16 +181,7 @@
 		6D631E4F163340700056F10E = {
 			isa = PBXGroup;
 			children = (
-				6DA567A1163783C700A09E3A /* Default-568h@2x.png */,
-				6D3CE510163781AA003C5D81 /* Default-Landscape@2x~ipad.png */,
-				6D3CE50E16378197003C5D81 /* Default-Landscape~ipad.png */,
-				6D3CE50A16378054003C5D81 /* Default-Portrait@2x~ipad.png */,
-				6D3CE50816378047003C5D81 /* Default-Portrait~ipad.png */,
 				6D3CE50216377F90003C5D81 /* README.md */,
-				6D3CE50016377C89003C5D81 /* jumbly_icon_144.png */,
-				6D3CE4FE16377C84003C5D81 /* jumbly_icon_72.png */,
-				6D3CE4FC16377C7A003C5D81 /* jumbly_icon_114.png */,
-				6D3CE4FA16377C69003C5D81 /* jumbly_icon_57.png */,
 				6DD3A5AB1634B1DD002ACE4A /* MessageUI.framework */,
 				6D631E64163340700056F10E /* Jumbly */,
 				6D631E8B163340700056F10E /* JumblyTests */,
@@ -268,6 +263,17 @@
 		6D631E9C1633407E0056F10E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				6DF79AC616421C0B00E38EE5 /* Default.png */,
+				6DF79AC416421C0300E38EE5 /* Default@2x.png */,
+				6DA567A1163783C700A09E3A /* Default-568h@2x.png */,
+				6D3CE510163781AA003C5D81 /* Default-Landscape@2x~ipad.png */,
+				6D3CE50E16378197003C5D81 /* Default-Landscape~ipad.png */,
+				6D3CE50A16378054003C5D81 /* Default-Portrait@2x~ipad.png */,
+				6D3CE50816378047003C5D81 /* Default-Portrait~ipad.png */,
+				6DF79AB8164216F300E38EE5 /* jumbly_icon_57.png */,
+				6DF79AB9164216F300E38EE5 /* jumbly_icon_72.png */,
+				6DF79ABA164216F400E38EE5 /* jumbly_icon_114.png */,
+				6DF79ABB164216F400E38EE5 /* jumbly_icon_144.png */,
 				6DF79AB416420F0800E38EE5 /* jumbly_pig.png */,
 				6DF79AB516420F0800E38EE5 /* jumbly_pig@2x.png */,
 				6DF79AAC16420D8C00E38EE5 /* icon-remove-circle.png */,
@@ -422,10 +428,6 @@
 				6DD3A5AF1634CABF002ACE4A /* jumbly_logo_iPhone.png in Resources */,
 				6DD3A5B01634CABF002ACE4A /* jumbly_logo_iPhone@2x.png in Resources */,
 				6D3CE4F916377249003C5D81 /* instructions.txt in Resources */,
-				6D3CE4FB16377C69003C5D81 /* jumbly_icon_57.png in Resources */,
-				6D3CE4FD16377C7A003C5D81 /* jumbly_icon_114.png in Resources */,
-				6D3CE4FF16377C84003C5D81 /* jumbly_icon_72.png in Resources */,
-				6D3CE50116377C89003C5D81 /* jumbly_icon_144.png in Resources */,
 				6D3CE50316377F90003C5D81 /* README.md in Resources */,
 				6D3CE50916378047003C5D81 /* Default-Portrait~ipad.png in Resources */,
 				6D3CE50B16378054003C5D81 /* Default-Portrait@2x~ipad.png in Resources */,
@@ -445,6 +447,12 @@
 				6DF79AB316420D8C00E38EE5 /* icon-signout@2x.png in Resources */,
 				6DF79AB616420F0800E38EE5 /* jumbly_pig.png in Resources */,
 				6DF79AB716420F0800E38EE5 /* jumbly_pig@2x.png in Resources */,
+				6DF79ABC164216F400E38EE5 /* jumbly_icon_57.png in Resources */,
+				6DF79ABD164216F400E38EE5 /* jumbly_icon_72.png in Resources */,
+				6DF79ABE164216F400E38EE5 /* jumbly_icon_114.png in Resources */,
+				6DF79ABF164216F400E38EE5 /* jumbly_icon_144.png in Resources */,
+				6DF79AC516421C0300E38EE5 /* Default@2x.png in Resources */,
+				6DF79AC716421C0B00E38EE5 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
