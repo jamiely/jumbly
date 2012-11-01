@@ -17,6 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.webView.backgroundColor = [UIColor clearColor];
+    self.webView.opaque = NO;
 	[self loadInstructions];
 }
 
@@ -24,18 +26,21 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         NSError *error = nil;
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"instructions" ofType:@"txt"];
-        self.instructionsLabel.text = [NSString stringWithContentsOfFile: filePath
-                                                                encoding: NSUTF8StringEncoding
-                                                                   error: &error];
-        [self.instructionsLabel sizeToFit];
+        NSString *html = [NSString stringWithContentsOfFile: filePath
+                                                   encoding: NSUTF8StringEncoding
+                                                      error: &error];
         if(error) {
             NSLog(@"Error loading instructions: %@", error);
+            return;
         }
+        
+        [self.webView loadHTMLString: html baseURL: [[NSBundle mainBundle] resourceURL]];
     });
 }
 
 
 - (IBAction)onDone:(id)sender {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:^{}];
+    [self.presentingViewController dismissViewControllerAnimated:YES
+                                                      completion:nil];
 }
 @end

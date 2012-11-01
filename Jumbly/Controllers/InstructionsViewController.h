@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface InstructionsViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *instructionsLabel;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 - (IBAction)onDone:(id)sender;
 
 @end

@@ -97,32 +97,27 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="500" translatesAutoresizingMaskIntoConstraints="NO" id="IXC-wv-t8l">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="532" id="Qq0-VQ-d4E"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hb2-Sr-8do">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Bfw-AT-edW" firstAttribute="top" secondItem="iKY-k4-RpY" secondAttribute="top" type="default" id="6cT-sy-NeW"/>
-                            <constraint firstItem="IXC-wv-t8l" firstAttribute="leading" secondItem="iKY-k4-RpY" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7sT-K9-jnu"/>
-                            <constraint firstAttribute="trailing" secondItem="IXC-wv-t8l" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ETv-YI-QWC"/>
-                            <constraint firstItem="IXC-wv-t8l" firstAttribute="top" secondItem="Tua-DM-ebJ" secondAttribute="bottom" constant="24" type="user" id="Eq0-fh-HO2"/>
+                            <constraint firstItem="hb2-Sr-8do" firstAttribute="leading" secondItem="iKY-k4-RpY" secondAttribute="leading" type="default" id="Dwg-vn-5ji"/>
+                            <constraint firstItem="hb2-Sr-8do" firstAttribute="trailing" secondItem="iKY-k4-RpY" secondAttribute="trailing" type="default" id="Ixr-5Y-SnD"/>
                             <constraint firstItem="Tua-DM-ebJ" firstAttribute="leading" secondItem="iKY-k4-RpY" secondAttribute="leading" type="default" id="LKV-Np-6Qf"/>
+                            <constraint firstItem="hb2-Sr-8do" firstAttribute="bottom" secondItem="iKY-k4-RpY" secondAttribute="bottom" type="default" id="Qtb-hB-una"/>
                             <constraint firstItem="Tua-DM-ebJ" firstAttribute="top" secondItem="iKY-k4-RpY" secondAttribute="top" type="user" id="RS9-wJ-eN2"/>
                             <constraint firstItem="Tua-DM-ebJ" firstAttribute="trailing" secondItem="iKY-k4-RpY" secondAttribute="trailing" type="default" id="RdS-Zl-P8l"/>
                             <constraint firstItem="Bfw-AT-edW" firstAttribute="bottom" secondItem="iKY-k4-RpY" secondAttribute="bottom" type="default" id="W9t-wQ-gJt"/>
                             <constraint firstItem="Bfw-AT-edW" firstAttribute="leading" secondItem="iKY-k4-RpY" secondAttribute="leading" type="default" id="fGi-i4-DYc"/>
                             <constraint firstItem="Bfw-AT-edW" firstAttribute="trailing" secondItem="iKY-k4-RpY" secondAttribute="trailing" type="default" id="fJm-eX-h0l"/>
-                            <constraint firstAttribute="bottom" secondItem="IXC-wv-t8l" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="s3g-Nl-i65"/>
+                            <constraint firstItem="hb2-Sr-8do" firstAttribute="top" secondItem="Tua-DM-ebJ" secondAttribute="bottom" type="default" id="sPh-dD-rDm"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="instructionsLabel" destination="IXC-wv-t8l" id="FZS-hv-EH7"/>
+                        <outlet property="webView" destination="hb2-Sr-8do" id="KvM-G2-MFb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7up-T2-QKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -251,7 +246,6 @@
                             <constraint firstItem="WYV-uZ-jlF" firstAttribute="top" secondItem="TpV-2F-E8s" secondAttribute="bottom" constant="8" type="user" id="MY9-Re-Hab"/>
                             <constraint firstItem="Lai-Cn-JDY" firstAttribute="centerX" secondItem="WYV-uZ-jlF" secondAttribute="centerX" type="user" id="O9U-GD-ejc"/>
                             <constraint firstAttribute="bottom" secondItem="KVm-ZQ-ecp" secondAttribute="bottom" constant="33" type="user" id="Plv-u7-lJv"/>
-                            <constraint firstItem="3mE-bV-fic" firstAttribute="top" secondItem="TpV-2F-E8s" secondAttribute="top" type="default" id="Qjt-35-jyB"/>
                             <constraint firstItem="Lai-Cn-JDY" firstAttribute="top" secondItem="WYV-uZ-jlF" secondAttribute="bottom" constant="37" type="user" id="SK5-3h-dU2"/>
                             <constraint firstItem="KVm-ZQ-ecp" firstAttribute="baseline" secondItem="Lai-Cn-JDY" secondAttribute="baseline" type="user" id="SzQ-wc-uyw"/>
                             <constraint firstItem="CZq-CY-35e" firstAttribute="top" secondItem="vqT-wx-Wdl" secondAttribute="top" constant="893" id="WJb-Ko-KuI"/>
@@ -275,6 +269,7 @@
                             <constraint firstAttribute="trailing" secondItem="KVm-ZQ-ecp" secondAttribute="trailing" constant="71" type="user" id="tUB-MU-7nT"/>
                             <constraint firstItem="uGj-a0-ERE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vqT-wx-Wdl" secondAttribute="leading" constant="84" type="user" id="teY-3d-pc2"/>
                             <constraint firstAttribute="trailing" secondItem="WYV-uZ-jlF" secondAttribute="trailing" constant="-13" type="user" id="uev-zs-ycA"/>
+                            <constraint firstItem="3mE-bV-fic" firstAttribute="top" secondItem="vqT-wx-Wdl" secondAttribute="top" constant="10" id="uyU-m7-Aji"/>
                         </constraints>
                     </view>
                     <connections>
@@ -311,7 +306,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InstructionsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="onDone:"/>
-                <relationship kind="outlet" name="instructionsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="instructionsLabel" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

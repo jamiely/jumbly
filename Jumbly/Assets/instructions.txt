@@ -1,12 +1,30 @@
-Starting with the first word, change a single letter in each word to produce a new, valid word. Fill in the spaces provided until you reach the last word.
-
-Valid words are those that are available in your phone's dictionary.
-
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body, html { background: none; background-color: transparent; color: white; }
+        .no-definition { color: red; }
+        .against-rules { font-style: italic; }
+        * { font-size: x-large; }
+    </style>
+</head>
+<body>
+<p>
+Starting with the first word, change a single letter in each word to produce a new, valid word. Fill in the spaces provided until you reach the last word. 
+There may be more than 1 solution to each puzzle.
+</p>
+<p>
+Valid words are those that are available in your phone's dictionary. Invalid words appear in <span class="no-definition">red</span>. If you change more than 1 letter between words, the invalid word will be <span class="against-rules">italicized</span>.
+</p>
+<p>
 You can start at any of the blank spaces. Sometimes it's easier to start at the bottom.
-
-[EXAMPLE GOES HERE]
-
-You can use the icons on the right of each word to reorder them. Hitting the info icon to the left of each word will show the dictionary definition of the word.
-
+</p>
+<img src="example.png" alt="Example gameplay" />
+<p>
+You can use the icons on the right of each word to reorder them. Hitting the info icon <img src="example_info.png" alt="Info Icon" /> to the left of each word will show the dictionary definition of the word.
+</p>
+<p>
 Press enter when editing a word to continue.
-
+</p>
+</body>
+</html>

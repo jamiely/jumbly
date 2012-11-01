@@ -85,15 +85,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="iF4-Gg-I2O"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Instructions" lineBreakMode="tailTruncation" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="297" translatesAutoresizingMaskIntoConstraints="NO" id="6Qx-kB-KJ5">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="315" id="ABz-JL-iyw"/>
-                                    <constraint firstAttribute="width" constant="297" type="user" id="cls-ln-yIW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAf-Co-1Ef">
                                 <items>
                                     <navigationItem title="Instructions" id="w7h-We-BPC">
@@ -105,23 +96,27 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5SG-Lg-PmE">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iF4-Gg-I2O" firstAttribute="leading" secondItem="cUk-ba-lpE" secondAttribute="leading" type="default" id="04M-hm-Xsn"/>
                             <constraint firstItem="mAf-Co-1Ef" firstAttribute="trailing" secondItem="cUk-ba-lpE" secondAttribute="trailing" type="default" id="2HY-DN-Nso"/>
+                            <constraint firstItem="5SG-Lg-PmE" firstAttribute="bottom" secondItem="cUk-ba-lpE" secondAttribute="bottom" type="default" id="BEv-sY-hlW"/>
                             <constraint firstItem="mAf-Co-1Ef" firstAttribute="top" secondItem="cUk-ba-lpE" secondAttribute="top" type="user" id="DdZ-gI-Pef"/>
                             <constraint firstItem="iF4-Gg-I2O" firstAttribute="bottom" secondItem="cUk-ba-lpE" secondAttribute="bottom" type="default" id="L2Q-d5-LNv"/>
+                            <constraint firstItem="5SG-Lg-PmE" firstAttribute="trailing" secondItem="cUk-ba-lpE" secondAttribute="trailing" type="default" id="MDI-jH-w71"/>
                             <constraint firstItem="iF4-Gg-I2O" firstAttribute="top" secondItem="cUk-ba-lpE" secondAttribute="top" type="default" id="adY-8s-KeN"/>
-                            <constraint firstItem="6Qx-kB-KJ5" firstAttribute="top" secondItem="cUk-ba-lpE" secondAttribute="top" priority="482" constant="66" type="user" id="eZv-iV-yCq"/>
-                            <constraint firstItem="6Qx-kB-KJ5" firstAttribute="top" secondItem="mAf-Co-1Ef" secondAttribute="bottom" constant="22" type="user" id="fab-ds-RB1"/>
+                            <constraint firstItem="5SG-Lg-PmE" firstAttribute="leading" secondItem="cUk-ba-lpE" secondAttribute="leading" type="default" id="fX9-mH-3E1"/>
                             <constraint firstItem="mAf-Co-1Ef" firstAttribute="leading" secondItem="cUk-ba-lpE" secondAttribute="leading" type="default" id="hI7-Vu-2lY"/>
-                            <constraint firstItem="mAf-Co-1Ef" firstAttribute="trailing" secondItem="iF4-Gg-I2O" secondAttribute="trailing" type="default" id="m9b-eh-PC5"/>
-                            <constraint firstItem="6Qx-kB-KJ5" firstAttribute="centerX" secondItem="mAf-Co-1Ef" secondAttribute="centerX" type="default" id="uzg-Ac-crT"/>
+                            <constraint firstItem="iF4-Gg-I2O" firstAttribute="trailing" secondItem="cUk-ba-lpE" secondAttribute="trailing" type="default" id="s0F-vn-AYz"/>
+                            <constraint firstItem="5SG-Lg-PmE" firstAttribute="top" secondItem="mAf-Co-1Ef" secondAttribute="bottom" type="default" id="wxi-U0-Ic6"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="instructionsLabel" destination="6Qx-kB-KJ5" id="Mlw-q3-xV9"/>
+                        <outlet property="webView" destination="5SG-Lg-PmE" id="gTG-h1-j1r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p7T-fU-fFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,7 +290,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InstructionsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="onDone:"/>
-                <relationship kind="outlet" name="instructionsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -308,6 +303,7 @@
                 <relationship kind="action" name="onQuit:"/>
                 <relationship kind="action" name="onShowSolution:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="debugTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="gestureRecognizer" candidateClass="UITapGestureRecognizer"/>
                 <relationship kind="outlet" name="puzzleLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
