@@ -43,8 +43,6 @@
 		6DA567A2163783C700A09E3A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DA567A1163783C700A09E3A /* Default-568h@2x.png */; };
 		6DD3A5AA1634ABFB002ACE4A /* wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DD3A5A91634ABFB002ACE4A /* wood.jpg */; };
 		6DD3A5AC1634B1DD002ACE4A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD3A5AB1634B1DD002ACE4A /* MessageUI.framework */; };
-		6DD3A5AF1634CABF002ACE4A /* jumbly_logo_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD3A5AD1634CABF002ACE4A /* jumbly_logo_iPhone.png */; };
-		6DD3A5B01634CABF002ACE4A /* jumbly_logo_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD3A5AE1634CABF002ACE4A /* jumbly_logo_iPhone@2x.png */; };
 		6DD3A5B41634D81B002ACE4A /* NSArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD3A5B31634D81B002ACE4A /* NSArray+Shuffle.m */; };
 		6DF09BE21641F3360058A794 /* example.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF09BE11641F3360058A794 /* example.png */; };
 		6DF09BE51641F4720058A794 /* example_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF09BE41641F4720058A794 /* example_info.png */; };
@@ -65,6 +63,10 @@
 		6DF79ABF164216F400E38EE5 /* jumbly_icon_144.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79ABB164216F400E38EE5 /* jumbly_icon_144.png */; };
 		6DF79AC516421C0300E38EE5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79AC416421C0300E38EE5 /* Default@2x.png */; };
 		6DF79AC716421C0B00E38EE5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF79AC616421C0B00E38EE5 /* Default.png */; };
+		6DFC4A0F1642A3A6002E00EF /* jumbly_logo@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC4A0B1642A3A6002E00EF /* jumbly_logo@2x~ipad.png */; };
+		6DFC4A101642A3A6002E00EF /* jumbly_logo@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC4A0C1642A3A6002E00EF /* jumbly_logo@2x~iphone.png */; };
+		6DFC4A111642A3A6002E00EF /* jumbly_logo~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC4A0D1642A3A6002E00EF /* jumbly_logo~ipad.png */; };
+		6DFC4A121642A3A6002E00EF /* jumbly_logo~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC4A0E1642A3A6002E00EF /* jumbly_logo~iphone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,8 +130,6 @@
 		6DA567A1163783C700A09E3A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		6DD3A5A91634ABFB002ACE4A /* wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wood.jpg; path = Assets/wood.jpg; sourceTree = "<group>"; };
 		6DD3A5AB1634B1DD002ACE4A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		6DD3A5AD1634CABF002ACE4A /* jumbly_logo_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jumbly_logo_iPhone.png; path = Assets/jumbly_logo_iPhone.png; sourceTree = "<group>"; };
-		6DD3A5AE1634CABF002ACE4A /* jumbly_logo_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jumbly_logo_iPhone@2x.png"; path = "Assets/jumbly_logo_iPhone@2x.png"; sourceTree = "<group>"; };
 		6DD3A5B21634D81B002ACE4A /* NSArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Shuffle.h"; path = "Categories/NSArray+Shuffle.h"; sourceTree = "<group>"; };
 		6DD3A5B31634D81B002ACE4A /* NSArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Shuffle.m"; path = "Categories/NSArray+Shuffle.m"; sourceTree = "<group>"; };
 		6DF09BE11641F3360058A794 /* example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = example.png; path = Assets/example.png; sourceTree = "<group>"; };
@@ -151,6 +151,10 @@
 		6DF79ABB164216F400E38EE5 /* jumbly_icon_144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jumbly_icon_144.png; path = Assets/jumbly_icon_144.png; sourceTree = "<group>"; };
 		6DF79AC416421C0300E38EE5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		6DF79AC616421C0B00E38EE5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		6DFC4A0B1642A3A6002E00EF /* jumbly_logo@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jumbly_logo@2x~ipad.png"; path = "Assets/jumbly_logo@2x~ipad.png"; sourceTree = "<group>"; };
+		6DFC4A0C1642A3A6002E00EF /* jumbly_logo@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jumbly_logo@2x~iphone.png"; path = "Assets/jumbly_logo@2x~iphone.png"; sourceTree = "<group>"; };
+		6DFC4A0D1642A3A6002E00EF /* jumbly_logo~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jumbly_logo~ipad.png"; path = "Assets/jumbly_logo~ipad.png"; sourceTree = "<group>"; };
+		6DFC4A0E1642A3A6002E00EF /* jumbly_logo~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "jumbly_logo~iphone.png"; path = "Assets/jumbly_logo~iphone.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,10 @@
 		6D631E9C1633407E0056F10E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				6DFC4A0B1642A3A6002E00EF /* jumbly_logo@2x~ipad.png */,
+				6DFC4A0C1642A3A6002E00EF /* jumbly_logo@2x~iphone.png */,
+				6DFC4A0D1642A3A6002E00EF /* jumbly_logo~ipad.png */,
+				6DFC4A0E1642A3A6002E00EF /* jumbly_logo~iphone.png */,
 				6DF79AC616421C0B00E38EE5 /* Default.png */,
 				6DF79AC416421C0300E38EE5 /* Default@2x.png */,
 				6DA567A1163783C700A09E3A /* Default-568h@2x.png */,
@@ -287,8 +295,6 @@
 				6DF79AA216420AC900E38EE5 /* question-sign@2x.png */,
 				6DF09BE41641F4720058A794 /* example_info.png */,
 				6DF09BE11641F3360058A794 /* example.png */,
-				6DD3A5AD1634CABF002ACE4A /* jumbly_logo_iPhone.png */,
-				6DD3A5AE1634CABF002ACE4A /* jumbly_logo_iPhone@2x.png */,
 				6DD3A5A91634ABFB002ACE4A /* wood.jpg */,
 				6D571BD81634536B008CFA25 /* define.png */,
 				6D1F3F1616342EF000409872 /* dictionary-cache.txt */,
@@ -425,8 +431,6 @@
 				6D1F3F1716342EF000409872 /* dictionary-cache.txt in Resources */,
 				6D571BD91634536B008CFA25 /* define.png in Resources */,
 				6DD3A5AA1634ABFB002ACE4A /* wood.jpg in Resources */,
-				6DD3A5AF1634CABF002ACE4A /* jumbly_logo_iPhone.png in Resources */,
-				6DD3A5B01634CABF002ACE4A /* jumbly_logo_iPhone@2x.png in Resources */,
 				6D3CE4F916377249003C5D81 /* instructions.txt in Resources */,
 				6D3CE50316377F90003C5D81 /* README.md in Resources */,
 				6D3CE50916378047003C5D81 /* Default-Portrait~ipad.png in Resources */,
@@ -453,6 +457,10 @@
 				6DF79ABF164216F400E38EE5 /* jumbly_icon_144.png in Resources */,
 				6DF79AC516421C0300E38EE5 /* Default@2x.png in Resources */,
 				6DF79AC716421C0B00E38EE5 /* Default.png in Resources */,
+				6DFC4A0F1642A3A6002E00EF /* jumbly_logo@2x~ipad.png in Resources */,
+				6DFC4A101642A3A6002E00EF /* jumbly_logo@2x~iphone.png in Resources */,
+				6DFC4A111642A3A6002E00EF /* jumbly_logo~ipad.png in Resources */,
+				6DFC4A121642A3A6002E00EF /* jumbly_logo~iphone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +573,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -580,6 +588,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -594,7 +603,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -602,6 +611,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -611,10 +621,12 @@
 		6D631E97163340700056F10E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Jumbly/Jumbly-Prefix.pch";
 				INFOPLIST_FILE = "Jumbly/Jumbly-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -622,10 +634,12 @@
 		6D631E98163340700056F10E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Jumbly/Jumbly-Prefix.pch";
 				INFOPLIST_FILE = "Jumbly/Jumbly-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1al-6T-lf4"/>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="jumbly_logo_iPhone.png" translatesAutoresizingMaskIntoConstraints="NO" id="HJl-jc-PNg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="jumbly_logo~ipad.png" translatesAutoresizingMaskIntoConstraints="NO" id="HJl-jc-PNg">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="314" type="user" id="FfC-7k-9OC"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="692" type="user" id="VPn-06-01Q"/>
@@ -247,7 +247,6 @@
                             <constraint firstItem="KVm-ZQ-ecp" firstAttribute="bottom" secondItem="Lai-Cn-JDY" secondAttribute="bottom" type="user" id="ScJ-rW-XOi"/>
                             <constraint firstItem="jv4-sp-ZwX" firstAttribute="top" secondItem="vqT-wx-Wdl" secondAttribute="top" type="default" id="X0r-lF-14v"/>
                             <constraint firstItem="KVm-ZQ-ecp" firstAttribute="width" secondItem="uGj-a0-ERE" secondAttribute="width" type="user" id="XR9-d4-6Hn"/>
-                            <constraint firstItem="uGj-a0-ERE" firstAttribute="centerY" secondItem="Lai-Cn-JDY" secondAttribute="centerY" type="default" id="YIo-Ch-pUh"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uGj-a0-ERE" secondAttribute="bottom" constant="33" type="user" id="YSY-Xp-M0u"/>
                             <constraint firstItem="TpV-2F-E8s" firstAttribute="top" secondItem="vqT-wx-Wdl" secondAttribute="top" constant="11" type="user" id="aM6-ga-QYk"/>
                             <constraint firstItem="WYV-uZ-jlF" firstAttribute="top" secondItem="TpV-2F-E8s" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="bhO-lx-Cs5"/>
@@ -292,7 +291,7 @@
         <image name="icon-refresh.png" width="45" height="45"/>
         <image name="icon-remove-circle.png" width="45" height="45"/>
         <image name="icon-signout.png" width="45" height="45"/>
-        <image name="jumbly_logo_iPhone.png" width="320" height="112"/>
+        <image name="jumbly_logo~ipad.png" width="1024" height="350"/>
         <image name="jumbly_pig.png" width="400" height="493"/>
         <image name="question-sign~ipad.png" width="50" height="50"/>
         <image name="wood.jpg" width="1000" height="1545"/>
@@ -337,6 +336,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eAu-Df-OLv"/>
+        <segue reference="Qhr-SV-JVp"/>
     </inferredMetricsTieBreakers>
 </document>
