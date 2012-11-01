@@ -2,7 +2,12 @@
 <html>
 <head>
     <style>
-        body, html { background: none; background-color: transparent; color: white; }
+        body, html { 
+            background: none; 
+            background-color: transparent; 
+            color: white; 
+            font-family: sans-serif;
+        }
         .no-definition { color: red; }
         .against-rules { font-style: italic; }
         * { font-size: x-large; }
