@@ -13,6 +13,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rJP-Cs-Qhi"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="jumbly_pig.png" translatesAutoresizingMaskIntoConstraints="NO" id="agZ-g0-qUv">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="1hf-ff-s5f"/>
+                                    <constraint firstAttribute="width" constant="99" id="LYj-WV-oeq"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="lLN-un-tUF">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -46,22 +52,25 @@
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="jumbly_logo_iPhone.png" translatesAutoresizingMaskIntoConstraints="NO" id="l7m-N9-Y2W">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="101" type="user" id="owv-iL-paA"/>
+                                    <constraint firstAttribute="height" constant="80" type="user" id="hcx-rb-DcN"/>
+                                    <constraint firstAttribute="width" constant="220" id="qmM-dx-qid"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="l7m-N9-Y2W" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1I2-iE-xL6"/>
-                            <constraint firstItem="lLN-un-tUF" firstAttribute="top" secondItem="l7m-N9-Y2W" secondAttribute="bottom" constant="31" type="user" id="1IU-Rq-6Of"/>
                             <constraint firstItem="l7m-N9-Y2W" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3" secondAttribute="top" constant="28" type="user" id="3Ma-yn-DsF"/>
+                            <constraint firstAttribute="trailing" secondItem="agZ-g0-qUv" secondAttribute="trailing" constant="6" id="IHH-Wi-Dms"/>
                             <constraint firstItem="l7m-N9-Y2W" firstAttribute="top" secondItem="3" secondAttribute="top" constant="28" type="user" id="Ipf-aD-XNa"/>
+                            <constraint firstItem="lLN-un-tUF" firstAttribute="top" secondItem="3" secondAttribute="top" constant="135" type="user" id="LKe-uZ-hIR"/>
                             <constraint firstItem="rJP-Cs-Qhi" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="PCE-dF-TaC"/>
                             <constraint firstItem="rJP-Cs-Qhi" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="UrD-LH-EoI"/>
                             <constraint firstItem="rJP-Cs-Qhi" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="ZdD-mv-AY9"/>
                             <constraint firstItem="lLN-un-tUF" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="ZeA-Gs-t7b"/>
-                            <constraint firstAttribute="trailing" secondItem="l7m-N9-Y2W" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dPx-c3-zB5"/>
                             <constraint firstItem="rJP-Cs-Qhi" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="eAJ-97-z1p"/>
+                            <constraint firstItem="lLN-un-tUF" firstAttribute="top" secondItem="l7m-N9-Y2W" secondAttribute="bottom" constant="27" type="user" id="q6w-xT-olR"/>
+                            <constraint firstItem="agZ-g0-qUv" firstAttribute="top" secondItem="3" secondAttribute="top" constant="12" id="ugF-Pg-709"/>
                             <constraint firstItem="lLN-un-tUF" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="vzH-62-Qol"/>
                         </constraints>
                     </view>
@@ -153,12 +162,13 @@
                                     <outlet property="delegate" destination="DQf-Kc-Rgr" id="tw3-sN-Fsz"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUs-MV-YWs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUs-MV-YWs">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" type="user" id="CKC-W4-f2f"/>
+                                    <constraint firstAttribute="height" constant="44" id="ySN-RI-4fV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="New Puzzle">
+                                <state key="normal" image="icon-refresh.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -169,12 +179,9 @@
                                     <action selector="onNewPuzzle:" destination="DQf-Kc-Rgr" eventType="touchUpInside" id="TdL-qY-ux7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNc-Rp-K59">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="ut3-Hl-brc"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNc-Rp-K59">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Give Up">
+                                <state key="normal" image="icon-remove-circle.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -185,10 +192,10 @@
                                     <action selector="onShowSolution:" destination="DQf-Kc-Rgr" eventType="touchUpInside" id="Jx7-bR-IAB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bar-XG-gNt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bar-XG-gNt">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Quit">
+                                <state key="normal" image="icon-signout.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -208,13 +215,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knd-T5-7P4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knd-T5-7P4">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="d7R-ay-mVw"/>
+                                    <constraint firstAttribute="height" constant="30" id="Nay-5y-0FO"/>
                                     <constraint firstAttribute="width" constant="32" id="h2H-sh-FXZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="?">
+                                <state key="normal" title="?" image="question-sign.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -235,26 +242,27 @@
                             <constraint firstItem="jNW-km-9Mc" firstAttribute="trailing" secondItem="4fC-zl-yFr" secondAttribute="trailing" type="user" id="5j1-1b-lqG"/>
                             <constraint firstItem="knd-T5-7P4" firstAttribute="trailing" secondItem="Bar-XG-gNt" secondAttribute="trailing" type="default" id="8Ka-ei-tzf"/>
                             <constraint firstItem="jNW-km-9Mc" firstAttribute="leading" secondItem="4fC-zl-yFr" secondAttribute="leading" type="user" id="8ey-Pg-Sum"/>
-                            <constraint firstAttribute="bottom" secondItem="wUs-MV-YWs" secondAttribute="bottom" constant="7" type="user" id="BHD-kp-d5s"/>
+                            <constraint firstItem="Bar-XG-gNt" firstAttribute="top" secondItem="CNc-Rp-K59" secondAttribute="top" type="default" id="9W2-UV-qYU"/>
                             <constraint firstItem="jNW-km-9Mc" firstAttribute="bottom" secondItem="4fC-zl-yFr" secondAttribute="bottom" priority="414" type="user" id="BbV-Kd-rpb"/>
                             <constraint firstItem="jNW-km-9Mc" firstAttribute="centerX" secondItem="CNc-Rp-K59" secondAttribute="centerX" type="user" id="CTh-Un-5x9"/>
                             <constraint firstItem="CNc-Rp-K59" firstAttribute="width" secondItem="Bar-XG-gNt" secondAttribute="width" type="user" id="MPe-55-0JQ"/>
                             <constraint firstItem="CNc-Rp-K59" firstAttribute="top" secondItem="jNW-km-9Mc" secondAttribute="bottom" constant="17" type="user" id="Ssc-Mk-TDt"/>
                             <constraint firstItem="Bar-XG-gNt" firstAttribute="leading" secondItem="CNc-Rp-K59" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="T9l-iK-zop"/>
-                            <constraint firstAttribute="bottom" secondItem="CNc-Rp-K59" secondAttribute="bottom" constant="7" type="user" id="Tl8-hH-w2g"/>
                             <constraint firstItem="MaL-Gx-9Tf" firstAttribute="top" secondItem="4fC-zl-yFr" secondAttribute="top" constant="7" type="user" id="VFY-gw-EGP"/>
+                            <constraint firstItem="knd-T5-7P4" firstAttribute="centerY" secondItem="MaL-Gx-9Tf" secondAttribute="centerY" type="default" id="YBh-F3-AWB"/>
                             <constraint firstItem="rNh-HP-MR0" firstAttribute="leading" secondItem="4fC-zl-yFr" secondAttribute="leading" type="default" id="a87-ab-4w8"/>
-                            <constraint firstItem="knd-T5-7P4" firstAttribute="top" secondItem="4fC-zl-yFr" secondAttribute="top" constant="10" id="ar6-V5-IuZ"/>
+                            <constraint firstItem="CNc-Rp-K59" firstAttribute="top" secondItem="wUs-MV-YWs" secondAttribute="top" type="default" id="aj5-Gu-aZW"/>
                             <constraint firstItem="wUs-MV-YWs" firstAttribute="leading" secondItem="4fC-zl-yFr" secondAttribute="leading" constant="5" type="user" id="itb-8M-dd6"/>
                             <constraint firstItem="CNc-Rp-K59" firstAttribute="width" secondItem="wUs-MV-YWs" secondAttribute="width" type="user" id="jK6-1O-uxE"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wUs-MV-YWs" secondAttribute="bottom" constant="7" type="user" id="nAA-pD-PCT"/>
                             <constraint firstItem="CNc-Rp-K59" firstAttribute="baseline" secondItem="wUs-MV-YWs" secondAttribute="baseline" type="user" id="nIM-N4-eMD"/>
+                            <constraint firstItem="Bar-XG-gNt" firstAttribute="bottom" secondItem="CNc-Rp-K59" secondAttribute="bottom" type="default" id="oke-uX-ZCb"/>
                             <constraint firstItem="jNW-km-9Mc" firstAttribute="top" secondItem="MaL-Gx-9Tf" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="qCR-bL-Jst"/>
-                            <constraint firstAttribute="bottom" secondItem="Bar-XG-gNt" secondAttribute="bottom" constant="7" type="user" id="qmW-f3-458"/>
                             <constraint firstItem="rNh-HP-MR0" firstAttribute="trailing" secondItem="4fC-zl-yFr" secondAttribute="trailing" type="default" id="rh6-ov-d5l"/>
                             <constraint firstItem="rNh-HP-MR0" firstAttribute="top" secondItem="4fC-zl-yFr" secondAttribute="top" type="default" id="tzY-8P-8lL"/>
                             <constraint firstAttribute="trailing" secondItem="MaL-Gx-9Tf" secondAttribute="trailing" constant="12" type="user" id="vXT-kf-X86"/>
                             <constraint firstItem="rNh-HP-MR0" firstAttribute="bottom" secondItem="4fC-zl-yFr" secondAttribute="bottom" type="default" id="vst-df-y6v"/>
+                            <constraint firstItem="CNc-Rp-K59" firstAttribute="bottom" secondItem="wUs-MV-YWs" secondAttribute="bottom" type="default" id="zED-ub-S1d"/>
                         </constraints>
                     </view>
                     <connections>
@@ -279,7 +287,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon-refresh.png" width="45" height="45"/>
+        <image name="icon-remove-circle.png" width="45" height="45"/>
+        <image name="icon-signout.png" width="45" height="45"/>
         <image name="jumbly_logo_iPhone.png" width="320" height="112"/>
+        <image name="jumbly_pig.png" width="400" height="493"/>
+        <image name="question-sign.png" width="32" height="32"/>
         <image name="wood.jpg" width="1000" height="1545"/>
     </resources>
     <classes>
@@ -322,6 +335,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hwj-Ut-cl6"/>
+        <segue reference="BY5-2P-cRr"/>
     </inferredMetricsTieBreakers>
 </document>
