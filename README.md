@@ -3,6 +3,9 @@
 A word jumble game for iOS. Based on my code here:
 https://github.com/jamiely/Word-Jumble.
 
+Available on iTunes here: 
+https://itunes.apple.com/us/app/jumbly/id575537890?ls=1&mt=8
+
 # Todo
 
 * Do not allow players to repeat words
